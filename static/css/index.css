@@ -1,0 +1,684 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+/* Araya RL Team navbar button */
+.araya-button {
+  padding: 0.75rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #363636;
+  background-color: #f5f5f5;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.araya-button:hover {
+  background-color: #ffffff;
+  border-color: #b5b5b5;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.video-item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.video-element {
+  width: 100%;
+  max-width: 420px;   /* DESKTOP size */
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.video-caption {
+  color: #fff;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+#video-strip {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.video-nav-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.video-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+/* ============================
+   📱 MOBILE FIX — CLEAN
+   ============================ */
+@media (max-width: 768px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 15px;
+  }
+
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  section.section {
+    padding: 1rem !important;
+  }
+
+  h1, h2, h3, .title {
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .publication-title {
+    font-size: 1.45rem !important;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-authors,
+  .authors,
+  .subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .author-block {
+    display: block;
+    margin: 0.15rem 0;
+  }
+
+  .publication-video,
+  .video-element {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  #video-strip {
+    padding: 0.75rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .video-caption {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .araya-button {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .publication-title,
+  .subtitle {
+    white-space: normal !important; 
+    word-break: break-word !important; 
+    font-size: 1.3rem !important; /* opzionale: riduce un po' la dimensione per stare meglio */
+  }
+}
+
+#team-container {
+  display: flex;
+  overflow-x: auto; 
+  gap: 1rem;
+  padding: 0.5rem;
+  -webkit-overflow-scrolling: touch; /* smooth scroll */
+}
+
+#team-container .team-member {
+  flex: 0 0 auto; 
+  width: 120px; 
+  text-align: center;
+}
+/* Center Araya button under title */
+.araya-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem; /* space below title */
+  width: 100%;
+}
+/* Hero section title and subtitle sizing */
+.publication-title {
+  font-size: 2.2rem; /* large main title */
+  font-weight: 700;  /* bold */
+  line-height: 1.2;  /* tighter line spacing */
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;  /* smaller than title */
+  font-weight: 400;   /* normal weight */
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+/* Authors styling */
+.publication-authors {
+  font-size: 0.95rem; /* readable, slightly smaller */
+  font-weight: 700;   /* bold names */
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+/* Optional: make subtitle wrap on mobile if needed */
+@media (max-width: 768px) {
+  .publication-title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .publication-authors {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 768px) {
+  #video-strip {
+    gap: 1.2rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .video-element {
+    max-width: 260px;   /* molto più piccoli su mobile */
+  }
+
+  .video-caption {
+    font-size: 0.9rem;
+  }
+}
+/* === Video strip responsive fix === */
+
+#video-strip {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.video-item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  text-align: center;
+}
+
+.video-element {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Caption */
+.video-caption {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Desktop override */
+@media (min-width: 769px) {
+  .video-item {
+    flex: 0 0 auto;
+  }
+
+  .video-element {
+    max-width: 420px;
+  }
+}
+/* === FORCE mobile layout for results carousel === */
+@media (max-width: 768px) {
+
+  #results-images-strip {
+    min-height: auto !important;
+    padding: 0 !important;
+  }
+
+  #image-strip-images {
+    padding: 1rem !important;
+    gap: 1rem !important;
+    scroll-snap-type: x mandatory;
+  }
+
+  #image-strip-images .image-item {
+    flex: 0 0 100% !important;
+    scroll-snap-align: center;
+  }
+
+  #image-strip-images .zoomable-img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  #image-strip-images p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* === Fix overlap between captions and arrows in results carousel === */
+#results-images-strip {
+  padding-bottom: 4rem !important;  /* space for arrows */
+}
+
+#image-strip-images p {
+  margin-bottom: 1.5rem !important; /* space under captions */
+}
+
+#image-strip-controls {
+  bottom: 16px !important;
+}
+
+/* === Meet the Team layout === */
+#team-image-strip {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+/* === Mobile layout: 3 people per row === */
+@media (max-width: 768px) {
+  #team-image-strip {
+    flex-wrap: wrap;        /* allow wrapping */
+  }
+
+  #team-image-strip > div {
+    width: 30%;            /* 3 items per row */
+    text-align: center;
+  }
+
+  #team-image-strip img {
+    width: 100px;          /* smaller photos on mobile */
+    height: auto;
+  }
+}
+/* === Desktop: restore correct video size === */
+@media (min-width: 769px) {
+
+  #video-strip {
+    padding: 2rem 200px;
+  }
+
+  .video-item {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+
+  .video-item video.video-element {
+    width: 800px !important;
+    max-width: none !important;
+    height: auto !important;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+
+  .video-caption {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 769px) {
+  #results-images-strip {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #image-strip-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 10vw;
+    scroll-snap-type: x mandatory;
+  }
+
+  #image-strip-images .image-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    scroll-snap-align: center;
+    text-align: center;
+  }
+
+  #image-strip-images .zoomable-img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+
+  #image-strip-images p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* CARD CONTAINER */
+.custom-card {
+  padding: 30px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  height: auto; 
+}
+
+/* HOVER EFFECT */
+.custom-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* ICON */
+.card-icon {
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+/* TITLE */
+.card-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* SUBTITLE */
+.card-sub {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* DESCRIPTION (hidden initially) */
+.card-desc {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0;
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+/* ON HOVER → EXPAND */
+.custom-card:hover .card-desc {
+  opacity: 1;
+  max-height: 300px; /* abbastanza grande per il testo */
+  margin-top: 15px;  /* spazio solo quando appare */
+}
+
+.task-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  height: 100%;
+}
+
+.task-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* Result Cards */
+.result-card {
+  position: relative;
+  background: white;
+  border-radius: 18px;
+  padding: 35px 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.result-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+/* Image inside card */
+.result-img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Titles */
+.result-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.result-sub {
+  font-size: 1rem;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* 🔍 Zoom icon */
+.zoom-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  padding: 6px 8px;
+  font-size: 16px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.result-card:hover .zoom-overlay {
+  opacity: 1;
+}
+
+/* Modal fix */
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+}

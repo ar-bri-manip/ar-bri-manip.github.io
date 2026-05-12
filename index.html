@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="An Augmented Reality Brain-Robot Interface for Generalist Robot Arm Manipulation.">
+  <meta name="keywords" content="Brain-Robot Interface, Augmented Reality, EEG, Motor Imagery, Robot Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>An Augmented Reality Brain-Robot Interface for Generalist Robot Arm Manipulation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/svg+xml" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+<style>
+  .nav-arrow {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #video-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* hide native scrollbar on WebKit */
+  #image-strip-images::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* zoom icon hover */
+  .zoom-icon:hover {
+    background: rgba(255,255,255,0.9);
+    color:#000;
+    transition: all 0.15s ease;
+  }
+
+  /* lightbox transitions */
+  #img-lightbox-overlay {
+    transition: opacity 0.12s ease;
+  }
+
+  #img-lightbox-overlay img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  #team-video-strip::-webkit-scrollbar {
+    display: none;
+  }
+  /* MOBILE FIX */
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .container, .section {
+        max-width: 100%;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1, h2, h3 {
+        text-align: center;
+        word-break: break-word;
+      }
+
+      .paper-title, .hero-title {
+        font-size: 1.35rem !important;
+        line-height: 1.4;
+      }
+
+      .authors {
+        font-size: 0.95rem;
+        text-align: center;
+      }
+    }
+</style>
+
+
+
+</head>
+
+<body>
+
+  <!-- Navbar Button Centered -->
+  <div class="araya-button-container">
+    <a class="araya-button"
+      href="https://research.araya.org/research/reinforcement-learning-team"
+      target="_blank">
+      Araya Reinforcement Learning Team
+    </a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" style="position: relative; padding-top: 1.2rem;">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            An Augmented Reality Brain-Robot Interface<br>for Generalist Robot Arm Manipulation
+          </h1>
+
+            <h2 class="subtitle is-4" style="white-space: nowrap;">
+              Combining Gaze-Based Object Selection and EEG-Based Action Control for Assistive Robotics
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <strong>
+                  Shangkai Zhang, Rousslan Fernand Julien Dossa, Luca Nunziante,<br>
+                  Marina Di Vincenzo, Kai Arulkumaran
+                </strong>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Araya Inc., Tokyo, Japan</span><br>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://www.frontiersin.org/" 
+                    target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                    rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                        data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 496 512">
+                        <path fill="currentColor"
+                          d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z">
+                        </path>
+                      </svg>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                  <!-- TODO: add GitHub link -->
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Project Overview Section -->
+<section class="section" id="project-overview" style="position: relative; padding-top: 0.5rem;">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Project Overview</h2>
+
+        <div class="content has-text-centered">
+
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            style="
+              width: 100%;
+              max-width: 800px;
+              border-radius: 10px;
+            "
+          >
+            <source src="static/videos/OVERVIEW.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Abstract Section -->
+  <section class="section" id="abstract" style="position: relative; padding-top: 0.5rem;">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+
+            <p style="text-align: center; font-weight: bold;">
+              Work in Progress
+            </p>
+
+            <p>
+              We present an augmented reality brain-robot interface (AR-BRI) for generalist robot arm manipulation, combining gaze-based object selection with EEG-based motor imagery control. The system enables intuitive interaction within a shared autonomy framework, allowing users to perform multi-step daily tasks directly in their physical environment.
+            </p>
+
+            <p>
+              Through a user study involving activities of daily living such as drinking, using a drawer, and operating an oven, we demonstrate effective task execution, high user engagement, and good usability, highlighting the potential of AR-based interfaces for assistive robotics.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivation Section -->
+  <section class="section" id="motivation" style="position: relative; padding-top: 1rem;">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Motivation</h2>
+          <div class="content has-text-justified">
+          <p style="text-align: center; font-weight: bold;">
+            Work in Progress
+          </p>
+
+          <p>
+            Assistive robotics aims to support individuals with physical impairments in performing activities of daily living (ADLs), such as drinking, cooking, or manipulating everyday objects. However, existing systems are often limited to predefined tasks and rely on interfaces that are not intuitive, requiring users to divide their attention between control devices and the physical environment.
+          </p>
+
+          <p>
+            In this work, we explore a more natural interaction paradigm by combining augmented reality with brain-robot interfaces. By integrating gaze-based object selection and EEG-based motor imagery control directly within the user’s environment, our system enables intuitive, hands-free interaction with a robotic arm for flexible, multi-step tasks.
+          </p>
+          </div>
+          <figure class="image" style="text-align: center;">
+            <img src="static/images/motivation.png"
+                style="max-width: 85%; border-radius: 12px; display: inline-block;">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- System Design Section -->
+<section class="section" id="system-design" style="position: relative; padding-top: 0.5rem;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3 has-text-centered">System Design</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>Work in progress.</strong>
+            The proposed AR brain-robot interface combines gaze-based object selection,
+            zero-shot object detection, EEG-based motor imagery decoding, and shared autonomy robot control.
+            Users interact directly with objects in the physical workspace through spatial AR overlays, while the robot
+            executes the selected high-level actions using autonomous manipulation policies.
+          </p>
+        </div>
+
+        <!-- Optional headset-view video -->
+        <div class="content has-text-centered" style="margin-top: 30px;">
+          <video controls autoplay muted loop playsinline
+                 style="width: 100%; max-width: 850px; border-radius: 14px;">
+            <source src="static/videos/systemdesign.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Cards -->
+        <div id="cards-container">
+          <div class="columns is-centered" style="margin-top: 40px;">
+
+            <div class="column is-3-desktop is-6-tablet">
+              <div class="custom-card" data-step="look">
+                <img src="static/images/11.png" class="card-icon">
+                <p class="card-title">Look</p>
+              </div>
+            </div>
+
+            <div class="column is-3-desktop is-6-tablet">
+              <div class="custom-card" data-step="detect">
+                <img src="static/images/22.png" class="card-icon">
+                <p class="card-title">Detect</p>
+              </div>
+            </div>
+
+            <div class="column is-3-desktop is-6-tablet">
+              <div class="custom-card" data-step="decide">
+                <img src="static/images/33.png" class="card-icon">
+                <p class="card-title">Decide</p>
+              </div>
+            </div>
+
+            <div class="column is-3-desktop is-6-tablet">
+              <div class="custom-card" data-step="execute">
+                <img src="static/images/44.png" class="card-icon">
+                <p class="card-title">Execute</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="hover-description" style="
+            margin-top: 0px;
+            padding: 0px;
+            border-radius: 15px;
+            background: #f9f9f9;
+            text-align: center;
+            color: #444;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+          ">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- User Study Section -->
+<section class="section" id="user-study" style="padding-top: 2rem;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3 has-text-centered">User Study</h2>
+
+        <div class="content has-text-justified">
+
+          <p>
+            <strong>Work in progress.</strong> We conducted a user study to evaluate the effectiveness, usability, and interaction capabilities of our augmented reality brain–robot interface for generalist manipulation tasks. The study aimed to assess whether users could reliably control a robotic arm through a combination of gaze and EEG-based motor imagery, and to what extent the system supports sequential task execution in realistic scenarios.
+          </p>
+
+          <p>
+            A total of <strong>18 participants</strong> took part in the experiment, with varying levels of prior experience with brain-computer interfaces. Each session included a calibration phase for training the EEG decoder, followed by a short practice period to familiarise participants with the interaction paradigm.
+          </p>
+
+          <p>
+            Participants were then asked to complete a set of multi-step manipulation tasks representative of activities of daily living. We evaluated system performance across multiple dimensions, including <strong>task success rate</strong>, <strong>completion time</strong>, and <strong>EEG decoding accuracy</strong>. In addition, subjective measures were collected using standardised questionnaires, including the <strong>System Usability Scale (SUS)</strong> and the <strong>NASA Task Load Index (NASA-TLX)</strong>, to assess perceived usability and workload.
+          </p>
+
+          <p>
+            These metrics allowed us to capture both objective system performance and user experience, providing a comprehensive evaluation of the proposed interaction framework.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Tasks Section -->
+  <section class="section" id="tasks" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3 has-text-centered">Tasks</h2>
+
+          <div class="content has-text-justified">
+
+            <p>
+              <strong>Work in progress.</strong> To evaluate the system in realistic conditions, participants were asked to perform three multi-step manipulation tasks inspired by activities of daily living. These tasks were designed to reflect common household interactions while requiring sequential decision-making and coordination between user input and robot execution.
+            </p>
+
+            <p>
+              The tasks included:
+            </p>
+
+  <!-- Task Cards -->
+<div class="columns is-centered is-variable is-4"
+     style="
+        margin-top: 50px;
+        max-width: 1900px;
+        width: 94%;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: stretch;
+     ">
+
+  <!-- Drinking -->
+  <div class="column">
+    <div class="task-card"
+         style="
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 18px;
+         "
+         onclick="window.open('static/videos/taskdrink.mp4', '_blank')">
+
+      <p class="card-title"
+         style="
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+         ">
+        Drinking Task
+      </p>
+
+      <video autoplay loop muted playsinline
+        style="
+            width: 100%;
+            height: auto;
+            min-width: 360px;
+            max-width: 460px;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            border-radius: 14px;
+            display: block;
+            margin: 0 auto;
+        ">
+        <source src="static/videos/taskdrink.mp4" type="video/mp4">
+      </video>
+
+      <p style="
+            font-size: 1rem;
+            color: gray;
+            margin-top: 10px;
+         ">
+        Drink and place the mug in the rack
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div class="column">
+    <div class="task-card"
+         style="
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 18px;
+         "
+         onclick="window.open('static/videos/taskdrawer.mp4', '_blank')">
+
+      <p class="card-title"
+         style="
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+         ">
+        Drawer Task
+      </p>
+
+      <video autoplay loop muted playsinline
+        style="
+            width: 100%;
+            height: auto;
+            min-width: 360px;
+            max-width: 460px;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            border-radius: 14px;
+            display: block;
+            margin: 0 auto;
+        ">
+        <source src="static/videos/taskdrawer.mp4" type="video/mp4">
+      </video>
+
+      <p style="
+            font-size: 1rem;
+            color: gray;
+            margin-top: 10px;
+         ">
+        Open the drawer and place the spoon inside
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Oven -->
+  <div class="column">
+    <div class="task-card"
+         style="
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 18px;
+         "
+         onclick="window.open('static/videos/taskoven.mp4', '_blank')">
+
+      <p class="card-title"
+         style="
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+         ">
+        Oven Task
+      </p>
+
+      <video autoplay loop muted playsinline
+        style="
+            width: 100%;
+            height: auto;
+            min-width: 360px;
+            max-width: 460px;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            border-radius: 14px;
+            display: block;
+            margin: 0 auto;
+        ">
+        <source src="static/videos/taskoven.mp4" type="video/mp4">
+      </video>
+
+      <p style="
+            font-size: 1rem;
+            color: gray;
+            margin-top: 10px;
+         ">
+        Open the oven and place the plate inside
+      </p>
+
+    </div>
+  </div>
+
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Results Section -->
+<section class="section" id="results">
+  <div class="container">
+
+    <!-- Main Results Title -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3 has-text-centered">Results</h2>
+
+        <div class="content has-text-justified">
+          <p style="margin-bottom: 45px; line-height: 1.7;">
+            <strong>Work in progress.</strong>
+            We evaluated the proposed AR brain-robot interface through a user study assessing system performance,
+            usability, and cognitive workload. Overall, participants successfully completed multi-step manipulation
+            tasks with high reliability and reported positive interaction experiences.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Robot and System Performance -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <h3 class="title is-4 has-text-centered">Robot and System Performance</h3>
+
+        <div class="content has-text-justified">
+          <p style="margin-bottom: 45px; line-height: 1.7;">
+            <strong>Work in progress.</strong>
+            We assessed robot and system performance through task success rate, subtask execution time,
+            overall task completion time, and EEG decoding accuracy. Across the three manipulation tasks,
+            the system demonstrated reliable performance, with high task success and completion times below
+            three minutes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Subtask Performance Cards -->
+    <div class="columns is-multiline is-centered is-variable is-4"
+         style="margin-top: 35px; margin-bottom: 70px;">
+
+      <!-- Use Mug -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/um.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/um.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Drink</p>
+          <p class="subtask-title">Use Mug</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 18.2 ± 1.6 s</p>
+            <p><strong>Completion:</strong> 112.2 ± 24.6 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Place Mug -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/pm.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/pm.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Drink</p>
+          <p class="subtask-title">Place Mug</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 0.9 (18/20)</p>
+            <p><strong>Execution:</strong> 20.9 ± 3.2 s</p>
+            <p><strong>Completion:</strong> 112.2 ± 24.6 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open Drawer -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/od.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/od.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Drawer</p>
+          <p class="subtask-title">Open Drawer</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 18.8 ± 4.5 s</p>
+            <p><strong>Completion:</strong> 131.9 ± 30.6 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Place Spoon -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/ps.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/ps.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Drawer</p>
+          <p class="subtask-title">Place Spoon</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 17.3 ± 1.4 s</p>
+            <p><strong>Completion:</strong> 131.9 ± 30.6 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Close Drawer -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/cd.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/cd.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Drawer</p>
+          <p class="subtask-title">Close Drawer</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 8.7 ± 0.8 s</p>
+            <p><strong>Completion:</strong> 131.9 ± 30.6 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open Oven -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/oo.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/oo.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Oven</p>
+          <p class="subtask-title">Open Oven</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 14.1 ± 5.2 s</p>
+            <p><strong>Completion:</strong> 115.9 ± 15.3 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Place Plate -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/pp.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/pp.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Oven</p>
+          <p class="subtask-title">Place Plate</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 20.2 ± 1.4 s</p>
+            <p><strong>Completion:</strong> 115.9 ± 15.3 s</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Close Oven -->
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="result-card subtask-card"
+             onclick="window.open('static/videos/co.mp4', '_blank')">
+          <video autoplay loop muted playsinline class="subtask-video">
+            <source src="static/videos/co.mp4" type="video/mp4">
+          </video>
+          <p class="subtask-task">Oven</p>
+          <p class="subtask-title">Close Oven</p>
+          <div class="subtask-details">
+            <p><strong>Success:</strong> 1.0 (18/18)</p>
+            <p><strong>Execution:</strong> 11.3 ± 0.8 s</p>
+            <p><strong>Completion:</strong> 115.9 ± 15.3 s</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- System Usability and Workload Evaluation -->
+    <h3 class="title is-4 has-text-centered" style="margin-top: 30px; margin-bottom: 45px;">
+      System Usability and Workload Evaluation
+    </h3>
+
+    <!-- NASA -->
+    <div class="result-card result-card-large"
+         onclick="openModal('static/images/NA.jpg')">
+
+      <span class="zoom-icon">🔍</span>
+
+      <img src="static/images/NA.jpg" class="result-image-large">
+
+      <p class="result-title">NASA-TLX</p>
+      <p class="result-sub">Workload Analysis</p>
+
+      <p class="result-description">
+        Participants reported a cognitively engaging but physically undemanding interaction.
+        Mental demand and effort were the dominant workload contributors, while physical demand,
+        temporal demand, and frustration remained relatively low.
+      </p>
+    </div>
+
+    <!-- SUS -->
+    <div class="result-card result-card-large"
+         onclick="openModal('static/images/SU.jpg')">
+
+      <span class="zoom-icon">🔍</span>
+
+      <img src="static/images/SU.jpg" class="result-image-large">
+
+      <p class="result-title">SUS</p>
+      <p class="result-sub">Usability Evaluation</p>
+
+      <p class="result-description">
+        The system achieved an overall SUS score of 76.94, corresponding to good usability.
+        Participants rated the interface as easy to learn, straightforward, and well integrated
+        for AR-based brain-robot interaction.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #results .subtask-card {
+    text-align: center;
+    padding: 18px;
+    height: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  #results .subtask-video {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 14px;
+    display: block;
+    margin: 0 auto 14px auto;
+  }
+
+  #results .subtask-task {
+    font-size: 0.95rem;
+    color: gray;
+    margin-bottom: 2px;
+  }
+
+  #results .subtask-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  #results .subtask-details {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition:
+      opacity 0.35s ease,
+      max-height 0.35s ease,
+      margin-top 0.35s ease;
+  }
+
+  #results .subtask-card:hover .subtask-details {
+    opacity: 1;
+    max-height: 180px;
+    margin-top: 14px;
+  }
+
+  #results .subtask-details p {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 4px;
+  }
+
+  #results .result-card-large {
+    position: relative;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto 60px auto;
+    padding: 36px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 28px;
+    cursor: pointer;
+  }
+
+  #results .result-image-large {
+    width: 82% !important;
+    max-width: 850px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 24px auto !important;
+    border-radius: 18px;
+  }
+
+  #results .result-title {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+
+  #results .result-sub {
+    font-size: 1rem;
+    color: gray;
+    margin-bottom: 10px;
+  }
+
+  #results .zoom-icon {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    font-size: 1.3rem;
+  }
+
+  #results .result-description {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.75;
+    font-size: 1rem;
+    color: #555;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      opacity 0.35s ease,
+      max-height 0.35s ease,
+      margin-top 0.35s ease;
+  }
+
+  #results .result-card-large:hover .result-description {
+    opacity: 1;
+    max-height: 260px;
+    margin-top: 18px;
+  }
+</style>
+
+
+      <!-- Takeaways Section -->
+    <section class="section" id="takeaways">
+      <div class="container">
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-10">
+
+            <h2 class="title is-3">Takeaways</h2>
+
+            <p style="margin-bottom: 20px;">
+              <strong>Work in progress.</strong><br>
+              Key insights from the proposed AR brain-robot interface:
+            </p>
+
+            <div class="content has-text-left" style="display: inline-block; text-align: left;">
+
+              <ul>
+                <li>
+                  <strong>Intuitive multimodal interaction</strong> — Gaze, EEG, and AR enable natural,
+                  hands-free robot control with minimal physical input.
+                </li>
+
+                <li>
+                  <strong>Intent-to-action mapping</strong> — High-level human intentions are directly
+                  translated into low-level robotic execution for efficient task completion.
+                </li>
+
+                <li>
+                  <strong>Generalist manipulation</strong> — A single robot policy supports diverse
+                  everyday tasks without task-specific programming.
+                </li>
+
+                <li>
+                  <strong>Balanced cognitive demand</strong> — EEG introduces effort, but gaze and
+                  autonomy reduce overall mental workload.
+                </li>
+
+                <li>
+                  <strong>Positive usability</strong> — Users reported good experience and high system
+                  acceptability in interaction tasks.
+                </li>
+
+                <li>
+                  <strong>Assistive autonomy potential</strong> — The system supports future ADLs
+                  assistance for users with motor impairments.
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  <!-- Citation Section -->
+  <section class="section" id="citation" style="padding-top: 0.25rem;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 auto;">
+      <h2 class="title is-3" style="text-align: center;">Citation</h2>
+
+      <pre style="
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #333;
+        white-space: pre-wrap;
+        border-radius: 10px;
+        text-wrap: inherit;
+      ">
+@article{douglas2026levels,
+    title     = {Levels of shared autonomy in brain-robot interfaces: enabling multi-robot multi-human collaboration for activities of daily living},
+    author    = {Douglas, Hannah and Di Vincenzo, Marina and Dossa, Rousslan Fernand Julien and Nunziante, Luca and Sujit, Shivakanth and Arulkumaran, Kai},
+    journal   = {Frontiers in Human Neuroscience},
+    volume    = {19},
+    pages     = {1718713},
+    publisher = {Frontiers}
+}</pre>
+    </div>
+  </section>
+
+  <!-- Meet the Team Section -->
+<section class="section" id="meet-the-team" style="padding-top:1.5rem;">
+  <div class="container">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Meet the Team</h2>
+
+        <div id="team-image-strip">
+
+          <!-- 1. Shangkai Zhang -->
+          <div class="team-member">
+            <img src="static/images/1.png" alt="Shangkai Zhang">
+            <div class="member_name">Shangkai Zhang</div>
+            <div class="member_links" style="margin-top: 0.5rem;">
+              <a href="mailto:zhangshangkai@g.ecc.u-tokyo.ac.jp" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <!-- 2. Rousslan -->
+          <div class="team-member">
+            <img src="static/images/3.png" alt="Rousslan">
+            <div class="member_name">Rousslan Dossa, Ph.D.</div>
+            <div class="member_links" style="margin-top: 0.5rem;">
+              <a href="https://dosssman.github.io/" target="_blank"><i class="fas fa-globe"></i></a>
+              <a href="mailto:dossa@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+              <a href="https://twitter.com/RousslanDossa" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://scholar.google.com/citations?user=ZDWS2CMAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
+            </div>
+          </div>
+
+          <!-- 3. Luca -->
+          <div class="team-member">
+            <img src="static/images/4.png" alt="Luca Nunziante">
+            <div class="member_name">Luca Nunziante</div>
+            <div class="member_links" style="margin-top: 0.5rem;">
+              <a href="mailto:luca_nunziante@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+              <a href="https://x.com/lucanunz" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://scholar.google.com/citations?user=0XjgMocAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
+            </div>
+          </div>
+
+          <!-- 4. Marina -->
+          <div class="team-member">
+            <img src="static/images/2.png" alt="Marina Di Vincenzo">
+            <div class="member_name">Marina Di Vincenzo</div>
+            <div class="member_links" style="margin-top: 0.5rem;">
+              <a href="mailto:marina_vincenzo@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+              <a href="https://scholar.google.com/citations?user=SYGaeJIAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
+            </div>
+          </div>
+
+          <!-- 5. Kai -->
+          <div class="team-member">
+            <img src="static/images/6.png" alt="Kai Arulkumaran">
+            <div class="member_name">Kai Arulkumaran, Ph.D.</div>
+            <div class="member_links" style="margin-top: 0.5rem;">
+              <a href="http://kaixhin.com" target="_blank"><i class="fas fa-globe"></i></a>
+              <a href="mailto:kai_arulkumaran@araya.org" target="_blank"><i class="fas fa-envelope"></i></a>
+              <a href="https://twitter.com/kaixhin" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://scholar.google.com/citations?user=QKCypSoAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+    <!-- Funding / Affiliations -->
+    <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    ">
+
+      <!-- Araya -->
+      <a href="https://www.araya.org/" target="_blank">
+        <img src="static/images/araya.png"
+            alt="Araya"
+            style="height: 90px; vertical-align: middle;">
+      </a>
+
+      <!-- IOB -->
+      <a href="https://www.internetofbrains.org/" target="_blank">
+        <img src="static/images/iob.png"
+            alt="Internet of Brains"
+            style="height: 90px; vertical-align: middle;">
+      </a>
+
+      <!-- ROMAN -->
+      <a href="https://ro-man2026.org/" target="_blank">
+        <img src="static/images/roman.png"
+            alt="RO-MAN 2026"
+            style="height: 90px; vertical-align: middle;">
+      </a>
+
+    </div>
+  </section>
+
+
+  <footer style="
+      background-color: #e0e0e0;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #333;
+    ">
+    Website template borrowed from
+    <a href="https://mobipi.github.io/" target="_blank" rel="noopener noreferrer"><strong>Mobi-π</strong></a>
+    and
+    <a href="https://github.com/nerfies/nerfies.github.io" target="_blank"
+      rel="noopener noreferrer"><strong>NeRFies</strong></a>.
+  </footer>
+
+
+<script>
+
+// =====================
+// DESCRIPTIONS (SYSTEM DESIGN)
+// =====================
+const descriptions = {
+  look: {
+    title: "Look",
+    text: `
+      The interaction begins with gaze-based object selection through a Meta Quest Pro augmented reality headset.
+      The headset provides passthrough vision together with integrated eye tracking, allowing the user to interact
+      with objects directly in the physical workspace without external screens, keyboards, or handheld controllers.
+
+      <br><br>
+
+      A yellow reticule continuously visualizes the user’s fixation point. To select an object, the user simply
+      fixates on it for a predefined dwell time. Virtual overlays are anchored in the real world, ensuring that
+      digital feedback remains spatially aligned with the corresponding physical objects.
+
+      <br><br>
+
+      The gaze interface also supports lightweight error recovery through a look-away cancellation mechanism.
+      By redirecting gaze away from the selected object before confirming an action, users can interrupt unintended
+      selections and continue interaction seamlessly.
+    `
+  },
+
+  detect: {
+    title: "Detect",
+    text: `
+      The headset passthrough view is streamed to an object detection module that identifies potential interaction
+      targets in the physical workspace. Object detection is performed using OWLv2, a zero-shot object detection
+      model capable of recognizing objects through language-based semantic grounding.
+
+      <br><br>
+
+      Detected object candidates are filtered according to the user’s gaze direction. The system checks which
+      bounding box intersects with the fixation point and returns the corresponding object label as the active target.
+
+      <br><br>
+
+      Once an object is detected, its name is displayed directly in augmented reality above the fixation point,
+      providing immediate feedback about the current selection state.
+    `
+  },
+
+  decide: {
+    title: "Decide",
+    text: `
+      After selecting an object, the user specifies the desired high-level robot action through EEG-based motor
+      imagery decoding. The interface presents two context-aware action options directly in augmented reality,
+      typically corresponding to “Place” and “Use”.
+
+      <br><br>
+
+      Motor imagery signals are acquired using a 22-channel EEG setup. Users imagine left- or right-hand movements
+      to encode action intentions, while the decoding pipeline predicts the intended command.
+
+      <br><br>
+
+      To improve robustness during online interaction, predictions are processed using a sliding-window strategy.
+      The system also integrates gaze-based recovery, allowing users to cancel or correct unintended commands by
+      looking away from the current target.
+    `
+  },
+
+  execute: {
+    title: "Execute",
+    text: `
+      Once the action is confirmed, the command is transmitted to the robotic manipulation module for execution.
+      The system uses a Franka Emika Panda robot arm controlled through a shared autonomy framework.
+
+      <br><br>
+
+      Rather than directly teleoperating the robot, the user specifies high-level intent while the robot handles
+      low-level motion generation, grasping, and task execution. Robot actions are generated through a fine-tuned
+      π0.5 vision-language-action policy trained on in-house demonstrations of daily living tasks.
+
+      <br><br>
+
+      This shared autonomy approach enables complex multi-step manipulation while reducing the burden placed on
+      the user.
+    `
+  }
+};
+// =====================
+// SYSTEM DESIGN HOVER
+// =====================
+const cards = document.querySelectorAll(".custom-card");
+const box = document.getElementById("hover-description");
+const container = document.getElementById("cards-container");
+
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => {
+
+    const step = card.getAttribute("data-step");
+
+    box.innerHTML = `
+      <h3 style="
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin-bottom: 18px;
+      ">
+        ${descriptions[step].title}
+      </h3>
+
+      <div style="
+          font-size: 1.05rem;
+          line-height: 1.9;
+          text-align: justify;
+      ">
+        ${descriptions[step].text}
+      </div>
+    `;
+
+    box.style.opacity = "1";
+
+    /* IMPORTANT */
+    box.style.maxHeight = "2000px";
+
+    box.style.padding = "35px";
+
+    box.style.marginTop = "30px";
+  });
+});
+
+container.addEventListener("mouseleave", () => {
+
+  box.style.opacity = "0";
+
+  box.style.maxHeight = "0";
+
+  box.style.padding = "0px";
+
+  box.style.marginTop = "0px";
+});
+
+// =====================
+// MODAL (RESULTS - NASA / SUS)
+// =====================
+function openModal(file) {
+  document.getElementById("modal-img").src = file;
+  document.getElementById("result-modal").classList.add("is-active");
+}
+
+function closeModal() {
+  document.getElementById("result-modal").classList.remove("is-active");
+  document.getElementById("modal-img").src = "";
+}
+
+</script>
+
+
+<!-- =====================
+MODAL HTML
+===================== -->
+<div id="result-modal" class="modal">
+  <div class="modal-background" onclick="closeModal()"></div>
+  <div class="modal-content has-text-centered">
+    <img id="modal-img" src="" style="
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 12px;
+    ">
+  </div>
+  <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
+</div>
+
+</html>
