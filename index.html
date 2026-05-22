@@ -214,8 +214,6 @@
           <div class="content has-text-justified">
 
             <p style="text-align: center; font-weight: bold;">
-              Work in Progress
-            </p>
 
             <p>
               We present an augmented reality brain-robot interface (AR-BRI) for generalist robot arm manipulation, combining gaze-based object selection with EEG-based motor imagery control. The system enables intuitive interaction within a shared autonomy framework, allowing users to perform multi-step daily tasks directly in their physical environment.
@@ -239,8 +237,6 @@
           <h2 class="title is-3">Motivation</h2>
           <div class="content has-text-justified">
           <p style="text-align: center; font-weight: bold;">
-            Work in Progress
-          </p>
 
           <p>
             Assistive robotics aims to support individuals with physical impairments in performing activities of daily living (ADLs), such as drinking, cooking, or manipulating everyday objects. However, existing systems are often limited to predefined tasks and rely on interfaces that are not intuitive, requiring users to divide their attention between control devices and the physical environment.
@@ -266,16 +262,24 @@
       <div class="column is-four-fifths">
 
         <h2 class="title is-3 has-text-centered">System Design</h2>
-
+            <figure class="image has-text-centered" style="margin: 2rem 0;">
+            <img src="static/images/systemdesign.jpg"
+                style="max-width: 85%; border-radius: 12px; display: inline-block;">
+          </figure>
         <div class="content has-text-justified">
           <p>
-            <strong>Work in progress.</strong>
-            The proposed AR brain-robot interface combines gaze-based object selection,
-            zero-shot object detection, EEG-based motor imagery decoding, and shared autonomy robot control.
-            Users interact directly with objects in the physical workspace through spatial AR overlays, while the robot
-            executes the selected high-level actions using autonomous manipulation policies.
-          </p>
-        </div>
+          The proposed AR brain–robot interface integrates gaze-based object selection, object detection, motor imagery (MI)-based action control, and robotic manipulation within a shared autonomy framework. By combining augmented reality (AR) with EEG-based brain–computer interaction, the system enables users to interact with and control a generalist robot arm through intuitive and spatially-aligned visual feedback.
+        </p>
+
+        <p>
+          The pipeline begins with the user observing the physical environment through the AR headset, where eye tracking is used to identify the object of interest in real time. The selected object is then processed by an object detection module, allowing the system to anchor contextual visual overlays directly onto the workspace. After the target object is identified, the user selects a high-level action (<b>"Use"</b> or <b>"Place"</b>) through EEG-based motor imagery decoding, while the robot autonomously executes the corresponding manipulation policy. This shared autonomy approach combines human intention with autonomous robot execution, reducing user workload while enabling flexible multi-step activities of daily living.
+        </p>
+
+        <p>
+          The overall architecture is composed of four main stages: <b>Look</b>, where the AR headset and eye tracking capture the user’s visual attention; <b>Detect</b>, where the system recognizes and localizes objects in the environment; <b>Decide</b>, where EEG-based motor imagery decodes the intended action; and <b>Execute</b>, where the robot performs the selected manipulation task autonomously. Together, these components create an immersive and intuitive interaction loop for assistive robot control.
+        </p>
+
+      </div>
 
         <!-- Optional headset-view video -->
         <div class="content has-text-centered" style="margin-top: 30px;">
@@ -1105,6 +1109,7 @@
 
 <script>
 
+
 // =====================
 // DESCRIPTIONS (SYSTEM DESIGN)
 // =====================
@@ -1112,43 +1117,32 @@ const descriptions = {
   look: {
     title: "Look",
     text: `
-      The interaction begins with gaze-based object selection through a Meta Quest Pro augmented reality headset.
-      The headset provides passthrough vision together with integrated eye tracking, allowing the user to interact
-      with objects directly in the physical workspace without external screens, keyboards, or handheld controllers.
+      <b>Look</b> represents the user perception layer of the system, combining augmented reality and eye tracking to enable intuitive interaction with the environment. The interface runs on a <b>Meta Quest Pro</b> headset developed in <b>Unreal Engine 5.4</b>, leveraging passthrough vision and integrated eye tracking for hands-free interaction.
 
       <br><br>
 
-      A yellow reticule continuously visualizes the user’s fixation point. To select an object, the user simply
-      fixates on it for a predefined dwell time. Virtual overlays are anchored in the real world, ensuring that
-      digital feedback remains spatially aligned with the corresponding physical objects.
+      The system continuously monitors the user’s gaze direction in real time, allowing objects in the physical environment to be naturally targeted through visual attention alone. Virtual overlays, textual feedback, and interaction widgets are spatially aligned with the user’s field of view, maintaining coherence between digital elements and real-world objects.
 
       <br><br>
 
-      The gaze interface also supports lightweight error recovery through a look-away cancellation mechanism.
-      By redirecting gaze away from the selected object before confirming an action, users can interrupt unintended
-      selections and continue interaction seamlessly.
+      To improve transparency and usability, the interface provides immediate visual feedback during interaction. When the user fixates on an object for a predefined dwell time, the object name and available interaction options become visible directly within the AR workspace. This creates an immersive and intuitive interaction loop without requiring external screens or manual controllers.
     `
   },
 
   detect: {
     title: "Detect",
     text: `
-      The headset passthrough view is streamed to an object detection module that identifies potential interaction
-      targets in the physical workspace. Object detection is performed using OWLv2, a zero-shot object detection
-      model capable of recognizing objects through language-based semantic grounding.
+      <b>Detect</b> is responsible for identifying and localizing objects within the user’s environment. The system streams passthrough images from the AR headset to an object detection pipeline based on <b>OWLv2</b>, a zero-shot open-vocabulary object detection model.
 
       <br><br>
 
-      Detected object candidates are filtered according to the user’s gaze direction. The system checks which
-      bounding box intersects with the fixation point and returns the corresponding object label as the active target.
+      Candidate objects within the workspace are periodically analyzed, and the system selects the object intersecting with the user’s gaze direction. This allows the interface to dynamically understand which object the user is focusing on without requiring predefined markers or rigid environments.
 
       <br><br>
 
-      Once an object is detected, its name is displayed directly in augmented reality above the fixation point,
-      providing immediate feedback about the current selection state.
+      Once an object is detected, contextual visual overlays are anchored directly onto the physical workspace, enabling spatially-aware interaction. The detected object is then forwarded to the decision-making and robot control modules, supporting flexible multi-step manipulation tasks in real-world scenarios.
     `
   },
-
   decide: {
     title: "Decide",
     text: `
