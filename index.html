@@ -266,20 +266,21 @@
             <img src="static/images/systemdesign.jpg"
                 style="max-width: 85%; border-radius: 12px; display: inline-block;">
           </figure>
-        <div class="content has-text-justified">
-          <p>
-          The proposed AR brain–robot interface integrates gaze-based object selection, object detection, motor imagery (MI)-based action control, and robotic manipulation within a shared autonomy framework. By combining augmented reality (AR) with EEG-based brain–computer interaction, the system enables users to interact with and control a generalist robot arm through intuitive and spatially-aligned visual feedback.
-        </p>
+          <div class="content has-text-justified">
 
-        <p>
-          The pipeline begins with the user observing the physical environment through the AR headset, where eye tracking is used to identify the object of interest in real time. The selected object is then processed by an object detection module, allowing the system to anchor contextual visual overlays directly onto the workspace. After the target object is identified, the user selects a high-level action (<b>"Use"</b> or <b>"Place"</b>) through EEG-based motor imagery decoding, while the robot autonomously executes the corresponding manipulation policy. This shared autonomy approach combines human intention with autonomous robot execution, reducing user workload while enabling flexible multi-step activities of daily living.
-        </p>
+            <p>
+              The proposed AR brain–robot interface is built around a <b>modular system architecture</b> that connects the mixed-reality headset, EEG module, object detection module, central BRI server, and robotic manipulation module. These components communicate through dedicated channels to coordinate visual perception, neural intent decoding, and robot execution within a shared autonomy framework.
+            </p>
 
-        <p>
-          The overall architecture is composed of four main stages: <b>Look</b>, where the AR headset and eye tracking capture the user’s visual attention; <b>Detect</b>, where the system recognizes and localizes objects in the environment; <b>Decide</b>, where EEG-based motor imagery decodes the intended action; and <b>Execute</b>, where the robot performs the selected manipulation task autonomously. Together, these components create an immersive and intuitive interaction loop for assistive robot control.
-        </p>
+            <p>
+              The mixed-reality headset provides the user-facing interface, combining passthrough vision, eye tracking, and spatially aligned AR feedback. Visual information from the headset is processed by the object detection module, while EEG signals are streamed to the decoder to estimate the user’s intended action. The central server coordinates these inputs and forwards the selected command to the robot module.
+            </p>
 
-      </div>
+            <p>
+              Through this pipeline, the user selects an object with gaze and chooses a high-level action through motor imagery, while the robot executes the corresponding manipulation policy autonomously. The system design can therefore be understood as a continuous interaction loop: perceiving the environment, identifying the target object, decoding the intended action, and executing the selected robot behavior.
+            </p>
+
+          </div>
 
         <!-- Optional headset-view video -->
         <div class="content has-text-centered" style="margin-top: 30px;">
@@ -352,22 +353,22 @@
         <h2 class="title is-3 has-text-centered">User Study</h2>
 
         <div class="content has-text-justified">
-
           <p>
-            <strong>Work in progress.</strong> We conducted a user study to evaluate the effectiveness, usability, and interaction capabilities of our augmented reality brain–robot interface for generalist manipulation tasks. The study aimed to assess whether users could reliably control a robotic arm through a combination of gaze and EEG-based motor imagery, and to what extent the system supports sequential task execution in realistic scenarios.
+            We conducted a user study to evaluate the effectiveness, usability, and interaction capabilities of the proposed AR brain–robot interface across realistic activities of daily living scenarios.
           </p>
 
           <p>
-            A total of <strong>18 participants</strong> took part in the experiment, with varying levels of prior experience with brain-computer interfaces. Each session included a calibration phase for training the EEG decoder, followed by a short practice period to familiarise participants with the interaction paradigm.
+            A total of <b>18 participants</b> took part in the experiment. Each session included an EEG calibration phase for training a user-specific decoder, followed by a short familiarisation stage with the interaction pipeline and AR interface.
           </p>
 
           <p>
-            Participants were then asked to complete a set of multi-step manipulation tasks representative of activities of daily living. We evaluated system performance across multiple dimensions, including <strong>task success rate</strong>, <strong>completion time</strong>, and <strong>EEG decoding accuracy</strong>. In addition, subjective measures were collected using standardised questionnaires, including the <strong>System Usability Scale (SUS)</strong> and the <strong>NASA Task Load Index (NASA-TLX)</strong>, to assess perceived usability and workload.
+            Participants were then asked to complete three multi-step manipulation tasks: a <b>Drinking Task</b>, a <b>Drawer Task</b>, and an <b>Oven Task</b>. These tasks were designed to evaluate sequential robot manipulation, object interaction, and high-level action selection in realistic household scenarios.
           </p>
 
           <p>
-            These metrics allowed us to capture both objective system performance and user experience, providing a comprehensive evaluation of the proposed interaction framework.
+            To assess the proposed framework, we collected metrics including task success rate, execution time, completion time, and EEG decoding performance. In addition, participants completed the <b>System Usability Scale (SUS)</b> and the <b>NASA Task Load Index (NASA-TLX)</b> questionnaires to evaluate perceived usability and workload.
           </p>
+
 
         </div>
 
@@ -386,12 +387,11 @@
 
           <div class="content has-text-justified">
 
-            <p>
-              <strong>Work in progress.</strong> To evaluate the system in realistic conditions, participants were asked to perform three multi-step manipulation tasks inspired by activities of daily living. These tasks were designed to reflect common household interactions while requiring sequential decision-making and coordination between user input and robot execution.
-            </p>
+          <p>
+              Participants were asked to perform <b>three multi-step manipulation tasks</b> inspired by activities of daily living. These tasks were designed to reflect common household interactions.            </p>
 
             <p>
-              The tasks included:
+              Each task required users to sequentially select objects and trigger high-level actions through the AR interface, while the robot autonomously executed the corresponding manipulation policy.
             </p>
 
   <!-- Task Cards -->
@@ -569,10 +569,7 @@
 
         <div class="content has-text-justified">
           <p style="margin-bottom: 45px; line-height: 1.7;">
-            <strong>Work in progress.</strong>
-            We evaluated the proposed AR brain-robot interface through a user study assessing system performance,
-            usability, and cognitive workload. Overall, participants successfully completed multi-step manipulation
-            tasks with high reliability and reported positive interaction experiences.
+          The results show that the proposed AR brain–robot interface supported effective sequential task execution across three activities of daily living. Participants completed the manipulation tasks with high success rates, consistent execution times, and good usability, while workload remained moderate and mainly related to the cognitive demands of EEG-based control.          </p>
           </p>
         </div>
 
@@ -587,13 +584,17 @@
 
         <div class="content has-text-justified">
           <p style="margin-bottom: 45px; line-height: 1.7;">
-            <strong>Work in progress.</strong>
-            We assessed robot and system performance through task success rate, subtask execution time,
-            overall task completion time, and EEG decoding accuracy. Across the three manipulation tasks,
-            the system demonstrated reliable performance, with high task success and completion times below
-            three minutes.
-          </p>
-        </div>
+        We evaluated robot and system performance through subtask success rate, execution time, overall task completion time, task success, and EEG decoder performance. Across all three tasks and eight subtasks, the system demonstrated consistent and reliable performance, supporting its viability for real-world assistive manipulation scenarios.
+
+            <br><br>
+
+            Both the <b>Drawer</b> and <b>Oven</b> tasks were completed with a <b>100% success rate</b>. The <b>Drink</b> task failed twice due to robot failure during the <b>Place Mug</b> subtask. Most policies showed low variability in execution time, while the <b>Open</b> subtasks had higher variability, reflecting the difficulty of finding a secure grasp for opening.
+
+            <br><br>
+
+            For EEG-based intent decoding, offline classification achieved a mean training/validation accuracy of <b>0.69 ± 0.16</b> and a test accuracy of <b>0.70 ± 0.17</b>, evaluated using stratified 5-fold cross-validation. Online decoding accuracy improved to <b>0.86 ± 0.23</b>, attributable to the sliding window scheme used during online decoding and the gaze-based error recovery mechanism.
+                </p>
+      </div>
 
       </div>
     </div>
@@ -746,10 +747,8 @@
     </h3>
 
     <!-- NASA -->
-    <div class="result-card result-card-large"
-         onclick="openModal('static/images/NA.jpg')">
-
-      <span class="zoom-icon">🔍</span>
+    <div class="result-card result-card-large">
+  
 
       <img src="static/images/NA.jpg" class="result-image-large">
 
@@ -757,17 +756,16 @@
       <p class="result-sub">Workload Analysis</p>
 
       <p class="result-description">
-        Participants reported a cognitively engaging but physically undemanding interaction.
-        Mental demand and effort were the dominant workload contributors, while physical demand,
-        temporal demand, and frustration remained relatively low.
+        The NASA-TLX results indicate a <b>moderate cognitive workload</b> associated with the proposed AR brain–robot interface. Among the workload components, <b>mental demand</b> and <b>effort</b> were the dominant contributors, reflecting the sustained cognitive engagement required for EEG-based interaction. In contrast, <b>physical</b> and <b>temporal demand</b> remained relatively low, consistent with the passive and hands-free nature of the gaze- and MI-driven interaction paradigm.
+
+        <br><br>
+
+        Participants also reported relatively low levels of frustration and high perceived task performance, suggesting that the system remained understandable and manageable despite the cognitive demands introduced by motor imagery control.
       </p>
     </div>
 
     <!-- SUS -->
-    <div class="result-card result-card-large"
-         onclick="openModal('static/images/SU.jpg')">
-
-      <span class="zoom-icon">🔍</span>
+    <div class="result-card result-card-large">
 
       <img src="static/images/SU.jpg" class="result-image-large">
 
@@ -775,10 +773,12 @@
       <p class="result-sub">Usability Evaluation</p>
 
       <p class="result-description">
-        The system achieved an overall SUS score of 76.94, corresponding to good usability.
-        Participants rated the interface as easy to learn, straightforward, and well integrated
-        for AR-based brain-robot interaction.
-      </p>
+        The proposed system achieved an overall <b>System Usability Scale (SUS)</b> score of <b>76.94</b>, corresponding to a <b>“Good” usability rating</b>. Participants reported that the system was easy to learn, straightforward to use, and well integrated across its multiple interaction modalities.
+
+        <br><br>
+
+        The highest-rated usability components were related to ease of learning and interaction simplicity, while lower scores were associated with independent system usage, reflecting the level of expertise currently required for EEG calibration and system operation. 
+        Overall, the SUS results suggest a positive user experience and support the usability of the proposed AR interaction framework for assistive robot control.      </p>
     </div>
 
   </div>
@@ -918,37 +918,31 @@
 
             <div class="content has-text-left" style="display: inline-block; text-align: left;">
 
-              <ul>
-                <li>
-                  <strong>Intuitive multimodal interaction</strong> — Gaze, EEG, and AR enable natural,
-                  hands-free robot control with minimal physical input.
-                </li>
+            <ul>
+              <li>
+                <b>Effective sequential control:</b> Users were able to complete multi-step activities of daily living through the proposed AR brain–robot interface.
+              </li>
 
-                <li>
-                  <strong>Intent-to-action mapping</strong> — High-level human intentions are directly
-                  translated into low-level robotic execution for efficient task completion.
-                </li>
+              <li>
+                <b>High task performance:</b> The system achieved near-perfect subtask success rates and consistent execution times across the evaluated tasks.
+              </li>
 
-                <li>
-                  <strong>Generalist manipulation</strong> — A single robot policy supports diverse
-                  everyday tasks without task-specific programming.
-                </li>
+              <li>
+                <b>Good usability:</b> Participants rated the system positively, with a SUS score of <b>76.94</b>, corresponding to a “Good” usability range.
+              </li>
 
-                <li>
-                  <strong>Balanced cognitive demand</strong> — EEG introduces effort, but gaze and
-                  autonomy reduce overall mental workload.
-                </li>
+              <li>
+                <b>Moderate cognitive workload:</b> EEG-based control required sustained cognitive engagement, while physical and temporal demands remained low.
+              </li>
 
-                <li>
-                  <strong>Positive usability</strong> — Users reported good experience and high system
-                  acceptability in interaction tasks.
-                </li>
+              <li>
+                <b>Engaging interaction:</b> Participants responded positively to the combination of real-world object interaction, AR feedback, and robot execution.
+              </li>
 
-                <li>
-                  <strong>Assistive autonomy potential</strong> — The system supports future ADLs
-                  assistance for users with motor impairments.
-                </li>
-              </ul>
+              <li>
+                <b>Future validation needed:</b> The system was tested with healthy participants, so further evaluation with the intended user population is needed.
+              </li>
+            </ul>
 
             </div>
 
@@ -974,7 +968,7 @@
         border-radius: 10px;
         text-wrap: inherit;
       ">
-@article{douglas2026levels,
+@WIP article{douglas2026levels,
     title     = {Levels of shared autonomy in brain-robot interfaces: enabling multi-robot multi-human collaboration for activities of daily living},
     author    = {Douglas, Hannah and Di Vincenzo, Marina and Dossa, Rousslan Fernand Julien and Nunziante, Luca and Sujit, Shivakanth and Arulkumaran, Kai},
     journal   = {Frontiers in Human Neuroscience},
@@ -1117,68 +1111,67 @@ const descriptions = {
   look: {
     title: "Look",
     text: `
-      <b>Look</b> represents the user perception layer of the system, combining augmented reality and eye tracking to enable intuitive interaction with the environment. The interface runs on a <b>Meta Quest Pro</b> headset developed in <b>Unreal Engine 5.4</b>, leveraging passthrough vision and integrated eye tracking for hands-free interaction.
+      <b>Look</b> captures the user’s gaze and visual interaction within the augmented reality workspace. The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
 
       <br><br>
 
-      The system continuously monitors the user’s gaze direction in real time, allowing objects in the physical environment to be naturally targeted through visual attention alone. Virtual overlays, textual feedback, and interaction widgets are spatially aligned with the user’s field of view, maintaining coherence between digital elements and real-world objects.
+      The system continuously monitors the user’s gaze direction through the headset’s eye-tracking module. A visual gaze indicator, textual feedback, and interaction widgets are spatially aligned with the user’s field of view, maintaining coherence between the virtual overlays and the physical environment.
 
       <br><br>
 
-      To improve transparency and usability, the interface provides immediate visual feedback during interaction. When the user fixates on an object for a predefined dwell time, the object name and available interaction options become visible directly within the AR workspace. This creates an immersive and intuitive interaction loop without requiring external screens or manual controllers.
+      When the user fixates on a detectable object for a predefined dwell time, the object name is displayed above the fixation point, and the available action options become visible as spatial overlays around the selected object. This feedback helps make object targeting transparent and reduces uncertainty during interaction.
+
+      <br><br>
+
+      The gaze interface also supports <b>look-away cancellation</b>. If the user shifts their gaze away from the selected, the selection is cancelled and the user can choose again. If an action has already been selected, looking away sends the opposite command to the robot module as a lightweight error recovery mechanism.
     `
   },
 
   detect: {
     title: "Detect",
     text: `
-      <b>Detect</b> is responsible for identifying and localizing objects within the user’s environment. The system streams passthrough images from the AR headset to an object detection pipeline based on <b>OWLv2</b>, a zero-shot open-vocabulary object detection model.
+    <b>Detect</b> identifies the object that the user is looking at within the physical workspace. The Meta Quest Pro streams its passthrough view to the object detection manager, which forwards it to an object detection module based on <b>OWLv2</b>, a zero-shot open-vocabulary object detection model.
 
-      <br><br>
+    <br><br>
 
-      Candidate objects within the workspace are periodically analyzed, and the system selects the object intersecting with the user’s gaze direction. This allows the interface to dynamically understand which object the user is focusing on without requiring predefined markers or rigid environments.
+    Every three seconds, the object detection module receives the passthrough view together with a set of candidate labels corresponding to the objects present in the user’s environment. The system then analyzes the detected objects and bounding boxes, filtering them to identify the object that intersects with the user’s gaze direction.
 
-      <br><br>
+    <br><br>
 
-      Once an object is detected, contextual visual overlays are anchored directly onto the physical workspace, enabling spatially-aware interaction. The detected object is then forwarded to the decision-making and robot control modules, supporting flexible multi-step manipulation tasks in real-world scenarios.
+    When a gaze-aligned object is detected, its name is displayed as a textual cue over the gaze reticule. This allows the AR interface to connect the user’s visual attention with the object detection pipeline, supporting spatially aware object selection without requiring predefined markers or manual input.  
     `
   },
   decide: {
     title: "Decide",
     text: `
-      After selecting an object, the user specifies the desired high-level robot action through EEG-based motor
-      imagery decoding. The interface presents two context-aware action options directly in augmented reality,
-      typically corresponding to “Place” and “Use”.
+      <b>Decide</b> represents the EEG-based action selection layer of the system, where the user’s motor imagery activity is decoded into high-level manipulation intents. EEG data is acquired from a <b>g.tec g.GAMMAcap</b>, using <b>22 EEG channels</b>, and streamed in real time through the <b>Lab Streaming Layer (LSL)</b> framework.
 
       <br><br>
 
-      Motor imagery signals are acquired using a 22-channel EEG setup. Users imagine left- or right-hand movements
-      to encode action intentions, while the decoding pipeline predicts the intended command.
+      After an object is selected through gaze interaction, the user chooses between two available actions, <b>"Use"</b> and <b>"Place"</b>, through motor imagery. These two actions are mapped to distinct MI classes, corresponding to imagined left- and right-hand movements. The EEG decoder processes sensorimotor rhythm activity to classify the intended action and send the corresponding command to the robot control pipeline.
 
       <br><br>
 
-      To improve robustness during online interaction, predictions are processed using a sliding-window strategy.
-      The system also integrates gaze-based recovery, allowing users to cancel or correct unintended commands by
-      looking away from the current target.
+      For deployment, user-specific EEG data is collected during a calibration phase and used to train a <b>scikit-learn</b>-based classifier. During online interaction, the decoding pipeline uses a <b>sliding window scheme</b> to reduce the impact of isolated incorrect predictions, supporting more stable real-time action selection.
+
+      <br><br>
+
+      After an action has been selected, the system also allows the user to recover from an incorrect EEG prediction through <b>look-away cancellation</b>. By shifting their gaze away from the selected object, the user can send the opposite command to the robot module, providing a lightweight correction mechanism during interaction.
     `
   },
 
   execute: {
     title: "Execute",
     text: `
-      Once the action is confirmed, the command is transmitted to the robotic manipulation module for execution.
-      The system uses a Franka Emika Panda robot arm controlled through a shared autonomy framework.
+    <b>Execute</b> represents the robot manipulation layer of the system, where high-level user intent is transformed into autonomous robot execution. In the shared autonomy framework, the user specifies the intended object and action, while the robot handles the low-level motion required to complete the manipulation task.
 
-      <br><br>
+<br><br>
 
-      Rather than directly teleoperating the robot, the user specifies high-level intent while the robot handles
-      low-level motion generation, grasping, and task execution. Robot actions are generated through a fine-tuned
-      π0.5 vision-language-action policy trained on in-house demonstrations of daily living tasks.
+The robot module interfaces with a <b>Franka Emika Panda</b> arm through <b>RoboHive</b>. Based on the user choices, a prompt is built and passed to a fine-tuned <b>π0.5 Vision-Language-Action (VLA)</b> policy, deployed as part of the robot control pipeline.
 
-      <br><br>
+<br><br>
 
-      This shared autonomy approach enables complex multi-step manipulation while reducing the burden placed on
-      the user.
+The policy was fine-tuned on in-house demonstrations spanning across <b>8 tasks</b>, including the ones used in the study. By using generalist robot policies, a single model is capable of different forms of manipulation, such as opening and closing containers, and picking objects of different nature.
     `
   }
 };
