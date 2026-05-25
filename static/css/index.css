@@ -682,3 +682,10 @@ body {
   object-fit: contain;
   border-radius: 12px;
 }
+.video-note {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}

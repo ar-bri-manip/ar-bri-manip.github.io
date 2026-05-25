@@ -122,10 +122,6 @@
           <h1 class="title is-1 publication-title">
             An Augmented Reality Brain-Robot Interface<br>for Generalist Robot Arm Manipulation
           </h1>
-
-            <h2 class="subtitle is-4" style="white-space: nowrap;">
-              Combining Gaze-Based Object Selection and EEG-Based Action Control for Assistive Robotics
-            </h2>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <strong>
@@ -442,6 +438,8 @@
         <source src="static/videos/taskdrink.mp4" type="video/mp4">
       </video>
 
+      <p class="video-note">Video sped up for display</p>
+
       <p style="
             font-size: 1rem;
             color: gray;
@@ -490,6 +488,8 @@
         <source src="static/videos/taskdrawer.mp4" type="video/mp4">
       </video>
 
+      <p class="video-note">Video sped up for display</p>
+
       <p style="
             font-size: 1rem;
             color: gray;
@@ -537,6 +537,8 @@
         ">
         <source src="static/videos/taskoven.mp4" type="video/mp4">
       </video>
+
+      <p class="video-note">Video sped up for display</p>
 
       <p style="
             font-size: 1rem;
@@ -1163,7 +1165,7 @@ const descriptions = {
   execute: {
     title: "Execute",
     text: `
-    <b>Execute</b> represents the robot manipulation layer of the system, where high-level user intent is transformed into autonomous robot execution. In the shared autonomy framework, the user specifies the intended object and action, while the robot handles the low-level motion required to complete the manipulation task.
+<b>Execute</b> represents the robot manipulation layer of the system, where high-level user intent is transformed into autonomous robot execution. In the shared autonomy framework, the user specifies the intended object and action, while the robot handles the low-level motion required to complete the manipulation task.
 
 <br><br>
 
@@ -1171,7 +1173,7 @@ The robot module interfaces with a <b>Franka Emika Panda</b> arm through <b>Robo
 
 <br><br>
 
-The policy was fine-tuned on in-house demonstrations spanning across <b>8 tasks</b>, including the ones used in the study. By using generalist robot policies, a single model is capable of different forms of manipulation, such as opening and closing containers, and picking objects of different nature.
+The policy was fine-tuned on in-house demonstrations spanning across <b>9 tasks</b>, including the ones used in the study. By using generalist robot policies, a single model is capable of different forms of manipulation, such as opening and closing containers, and picking objects of different nature.
     `
   }
 };
