@@ -264,16 +264,16 @@
           </figure>
           <div class="content has-text-justified">
 
-            <p>
-              The proposed AR brain–robot interface is built around a <b>modular system architecture</b> that connects the mixed-reality headset, EEG module, object detection module, central BRI server, and robotic manipulation module. These components communicate through dedicated channels to coordinate visual perception, neural intent decoding, and robot execution within a shared autonomy framework.
+          <p>
+              The proposed AR brain–robot interface is built around a <b>modular system architecture</b> that connects the augmented reality interface, EEG module, object detection module, central server, and robot module. These components communicate through dedicated channels to coordinate visual perception, neural intent decoding, object selection, and robot execution within a shared autonomy framework.
             </p>
 
             <p>
-              The mixed-reality headset provides the user-facing interface, combining passthrough vision, eye tracking, and spatially aligned AR feedback. Visual information from the headset is processed by the object detection module, while EEG signals are streamed to the decoder to estimate the user’s intended action. The central server coordinates these inputs and forwards the selected command to the robot module.
+              The AR headset provides the user-facing interface, combining passthrough vision, eye tracking, and spatially aligned visual feedback. Visual information from the headset is processed by the object detection module, while EEG signals are streamed to the recorder and decoder to estimate the user’s intended action. The central server coordinates these inputs through the robot command and object detection managers, then forwards the selected command to the robot module.
             </p>
 
             <p>
-              Through this pipeline, the user selects an object with gaze and chooses a high-level action through motor imagery, while the robot executes the corresponding manipulation policy autonomously. The system design can therefore be understood as a continuous interaction loop: perceiving the environment, identifying the target object, decoding the intended action, and executing the selected robot behavior.
+              Through this pipeline, the user selects an object with gaze and chooses a high-level action through motor imagery, while the robot executes the corresponding manipulation policy autonomously. The overall system forms a continuous interaction loop: perceiving the environment, identifying the target object, decoding the intended action, and executing the selected robot behavior.
             </p>
 
           </div>
