@@ -689,3 +689,246 @@ body {
   margin-bottom: 10px;
   text-align: center;
 }
+.subtask-results-grid {
+  margin-top: 35px;
+  margin-bottom: 70px;
+}
+
+/* Static robot-result cards */
+.result-card.static-result-card {
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+  min-height: 0;
+  padding: 22px 18px;
+  margin: 0 auto;
+
+  display: block;
+  cursor: default;
+
+  transition: none !important;
+  transform: none !important;
+}
+
+/* Completely disable every hover effect */
+.result-card.static-result-card:hover,
+.result-card.static-result-card:focus,
+.result-card.static-result-card:active {
+  transform: none !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  cursor: default;
+}
+
+/* Results always visible */
+.result-card.static-result-card .subtask-details {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+
+  margin-top: 14px;
+  transform: none !important;
+  transition: none !important;
+}
+
+.result-card.static-result-card .subtask-task {
+  margin: 0 0 4px;
+}
+
+.result-card.static-result-card .subtask-title {
+  margin: 0;
+}
+
+.result-card.static-result-card .subtask-details p {
+  margin: 4px 0;
+}
+
+/* Completely freeze static result cards and all their contents */
+.result-card.static-result-card,
+.result-card.static-result-card *,
+.result-card.static-result-card:hover,
+.result-card.static-result-card:hover * {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Keep the details in exactly the same position on hover */
+.result-card.static-result-card .subtask-details,
+.result-card.static-result-card:hover .subtask-details,
+.result-card.static-result-card:focus .subtask-details,
+.result-card.static-result-card:active .subtask-details,
+.subtask-card.static-result-card:hover .subtask-details {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+
+  margin-top: 14px !important;
+  padding-top: 0 !important;
+
+  position: static !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Card itself must not change */
+.result-card.static-result-card,
+.result-card.static-result-card:hover,
+.result-card.static-result-card:focus,
+.result-card.static-result-card:active {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 22px 18px !important;
+
+  transform: none !important;
+  transition: none !important;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+  cursor: default !important;
+}
+
+
+
+/* ============================
+   QUESTIONNAIRE SECTION
+   NASA-TLX + SUS
+   ============================ */
+
+#results .questionnaire-section-title {
+  margin-top: 110px !important;
+  margin-bottom: 45px !important;
+}
+
+#results .questionnaire-results {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 60px auto;
+  align-items: flex-start;
+}
+
+#results .questionnaire-results .column {
+  display: block;
+  padding: 6px;
+}
+
+#results .result-card-large {
+  position: relative;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto;
+  min-height: 0;
+
+  margin: 0 !important;
+  padding: 16px 10px 24px 10px;
+
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 28px;
+  cursor: pointer;
+
+  display: block;
+}
+
+#results .questionnaire-image-wrapper {
+  width: 100%;
+  height: 430px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+#results .result-card-large .result-image-large {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+
+  margin: 0 auto !important;
+  border-radius: 18px;
+
+  object-fit: contain;
+}
+
+#results .result-title {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+
+#results .result-sub {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+
+#results .result-description {
+  width: 100%;
+  margin: 0 auto;
+
+  text-align: center;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #555;
+
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    max-height 0.35s ease,
+    margin-top 0.35s ease;
+}
+
+
+#results .result-card-large:hover .result-description {
+  opacity: 1;
+  max-height: 700px;
+  margin-top: 18px;
+}
+
+
+@media (max-width: 768px) {
+
+  #results .questionnaire-section-title {
+    margin-top: 75px !important;
+  }
+
+  #results .questionnaire-results .column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #results .result-card-large {
+    margin-bottom: 30px !important;
+  }
+
+  #results .questionnaire-image-wrapper {
+    height: auto;
+  }
+
+  #results .result-card-large .result-image-large {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+}
+
