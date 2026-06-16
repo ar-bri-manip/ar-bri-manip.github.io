@@ -216,7 +216,7 @@
             </p>
 
             <p>
-              Through a user study involving activities of daily living such as drinking, using a drawer, and operating an oven, we demonstrate effective task execution, high user engagement, and good usability, highlighting the potential of AR-based interfaces for assistive robotics.
+            Through a feasibility study with 18 healthy participants performing activities of daily living such as drinking, using a drawer, and operating an oven, we demonstrate reliable task execution, high user engagement, and good usability, highlighting the potential of the proposed approach while motivating future evaluation with the intended user population.  
             </p>
 
           </div>
@@ -251,127 +251,232 @@
     </div>
   </section>
 
-<!-- System Design Section -->
-<section class="section" id="system-design" style="position: relative; padding-top: 0.5rem;">
+
+
+<!-- User Interface Section -->
+<section class="section" id="user-interface"
+         style="position: relative; padding-top: 1rem;">
   <div class="container">
+
     <div class="columns is-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-3 has-text-centered">System Design</h2>
-            <figure class="image has-text-centered" style="margin: 2rem 0;">
-            <img src="static/images/systemdesign.jpg"
-                style="max-width: 85%; border-radius: 12px; display: inline-block;">
-          </figure>
-          <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered"
+            style="margin-bottom: 2rem;">
+          User Interface
+        </h2>
 
+        <!-- Introductory sentence -->
+        <div class="content has-text-justified">
           <p>
-              The proposed AR brain–robot interface is built around a <b>modular system architecture</b> that connects the augmented reality interface, EEG module, object detection module, central server, and robot module. These components communicate through dedicated channels to coordinate visual perception, neural intent decoding, object selection, and robot execution within a shared autonomy framework.
-            </p>
+          </p>
+        </div>
 
-            <p>
-              The AR headset provides the user-facing interface, combining passthrough vision, eye tracking, and spatially aligned visual feedback. Visual information from the headset is processed by the object detection module, while EEG signals are streamed to the recorder and decoder to estimate the user’s intended action. The central server coordinates these inputs through the robot command and object detection managers, then forwards the selected command to the robot module.
-            </p>
+        <!-- Interface cards -->
+        <div id="cards-container">
 
-            <p>
-              Through this pipeline, the user selects an object with gaze and chooses a high-level action through motor imagery, while the robot executes the corresponding manipulation policy autonomously. The overall system forms a continuous interaction loop: perceiving the environment, identifying the target object, decoding the intended action, and executing the selected robot behavior.
-            </p>
+          <div class="columns is-centered is-multiline"
+               style="margin-top: 40px;">
+
+            <!-- Look -->
+            <div class="column is-3-desktop is-6-tablet">
+              <button
+                type="button"
+                class="custom-card interface-step-card is-active"
+                data-step="look"
+              >
+                <img
+                  src="static/images/11.png"
+                  class="card-icon"
+                  alt="Gaze-based object selection"
+                >
+                <p class="card-title">Look</p>
+              </button>
+            </div>
+
+            <!-- Detect -->
+            <div class="column is-3-desktop is-6-tablet">
+              <button
+                type="button"
+                class="custom-card interface-step-card"
+                data-step="detect"
+              >
+                <img
+                  src="static/images/22.png"
+                  class="card-icon"
+                  alt="Object detection"
+                >
+                <p class="card-title">Detect</p>
+              </button>
+            </div>
+
+            <!-- Decide -->
+            <div class="column is-3-desktop is-6-tablet">
+              <button
+                type="button"
+                class="custom-card interface-step-card"
+                data-step="decide"
+              >
+                <img
+                  src="static/images/33.png"
+                  class="card-icon"
+                  alt="EEG-based action selection"
+                >
+                <p class="card-title">Decide</p>
+              </button>
+            </div>
+
+            <!-- Execute -->
+            <div class="column is-3-desktop is-6-tablet">
+              <button
+                type="button"
+                class="custom-card interface-step-card"
+                data-step="execute"
+              >
+                <img
+                  src="static/images/44.png"
+                  class="card-icon"
+                  alt="Robot action execution"
+                >
+                <p class="card-title">Execute</p>
+              </button>
+            </div>
 
           </div>
 
-        <!-- Optional headset-view video -->
-        <div class="content has-text-centered" style="margin-top: 30px;">
-          <video controls autoplay muted loop playsinline
-                 style="width: 100%; max-width: 850px; border-radius: 14px;">
-            <source src="static/videos/systemdesign.mp4" type="video/mp4">
+          <!-- Description inserted by JavaScript -->
+          <div id="step-description" class="step-description"></div>
+
+        </div>
+
+        <!-- Headset-view video -->
+        <div class="content has-text-centered"
+            style="margin-top: 45px; margin-bottom: 20px;">
+          <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            style="
+              width: 100%;
+              max-width: 850px;
+              border-radius: 14px;
+            "
+          >
+            <source
+              src="static/videos/systemdesign.mp4"
+              type="video/mp4"
+            >
           </video>
         </div>
 
-        <!-- Cards -->
-        <div id="cards-container">
-          <div class="columns is-centered" style="margin-top: 40px;">
-
-            <div class="column is-3-desktop is-6-tablet">
-              <div class="custom-card" data-step="look">
-                <img src="static/images/11.png" class="card-icon">
-                <p class="card-title">Look</p>
-              </div>
-            </div>
-
-            <div class="column is-3-desktop is-6-tablet">
-              <div class="custom-card" data-step="detect">
-                <img src="static/images/22.png" class="card-icon">
-                <p class="card-title">Detect</p>
-              </div>
-            </div>
-
-            <div class="column is-3-desktop is-6-tablet">
-              <div class="custom-card" data-step="decide">
-                <img src="static/images/33.png" class="card-icon">
-                <p class="card-title">Decide</p>
-              </div>
-            </div>
-
-            <div class="column is-3-desktop is-6-tablet">
-              <div class="custom-card" data-step="execute">
-                <img src="static/images/44.png" class="card-icon">
-                <p class="card-title">Execute</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div id="hover-description" style="
-            margin-top: 0px;
-            padding: 0px;
-            border-radius: 15px;
-            background: #f9f9f9;
-            text-align: center;
-            color: #444;
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.4s ease;
-          ">
-          </div>
-        </div>
-
       </div>
     </div>
+
   </div>
 </section>
 
- <!-- User Study Section -->
-<section class="section" id="user-study" style="padding-top: 2rem;">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
+  <!-- System Design Section -->
+  <section class="section" id="system-design"
+          style="position: relative; padding-top: 0.5rem;">
+    <div class="container">
 
-        <h2 class="title is-3 has-text-centered">User Study</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
 
-        <div class="content has-text-justified">
-          <p>
-            We conducted a user study to evaluate the effectiveness, usability, and interaction capabilities of the proposed AR brain–robot interface across realistic activities of daily living scenarios.
-          </p>
+          <h2 class="title is-3 has-text-centered">
+            System Design
+          </h2>
 
-          <p>
-            A total of <b>18 participants</b> took part in the experiment. Each session included an EEG calibration phase for training a user-specific decoder, followed by a short familiarisation stage with the interaction pipeline and AR interface.
-          </p>
+          <figure class="image has-text-centered"
+                  style="margin: 2rem 0;">
+            <img
+              src="static/images/systemdesign.jpg"
+              alt="System architecture of the AR brain-robot interface"
+              style="
+                max-width: 85%;
+                border-radius: 12px;
+                display: inline-block;
+              "
+            >
+          </figure>
 
-          <p>
-            Participants were then asked to complete three multi-step manipulation tasks: a <b>Drinking Task</b>, a <b>Drawer Task</b>, and an <b>Oven Task</b>. These tasks were designed to evaluate sequential robot manipulation, object interaction, and high-level action selection in realistic household scenarios.
-          </p>
+          <div class="content has-text-justified">
 
-          <p>
-            To assess the proposed framework, we collected metrics including task success rate, execution time, completion time, and EEG decoding performance. In addition, participants completed the <b>System Usability Scale (SUS)</b> and the <b>NASA Task Load Index (NASA-TLX)</b> questionnaires to evaluate perceived usability and workload.
-          </p>
+            <p>
+              The proposed AR brain–robot interface is built around a
+              <b>modular system architecture</b> that connects the augmented
+              reality interface, EEG module, object detection module, central
+              server, and robot module. These components communicate through
+              dedicated channels to coordinate visual perception, neural intent
+              decoding, object selection, and robot execution within a shared
+              autonomy framework.
+            </p>
 
+            <p>
+              The AR headset provides the user-facing interface, combining
+              passthrough vision, eye tracking, and spatially aligned visual
+              feedback. Visual information from the headset is processed by the
+              object detection module, while EEG signals are streamed to the
+              recorder and decoder to estimate the user’s intended action. The
+              central server coordinates these inputs through the robot command
+              and object detection managers, then forwards the selected command
+              to the robot module.
+            </p>
+
+            <p>
+              Through this pipeline, the user selects an object with gaze and
+              chooses a high-level action through motor imagery, while the robot
+              executes the corresponding manipulation policy autonomously. The
+              overall system forms a continuous interaction loop: perceiving the
+              environment, identifying the target object, decoding the intended
+              action, and executing the selected robot behavior.
+            </p>
+
+          </div>
 
         </div>
+      </div>
 
+    </div>
+  </section>
+
+
+
+
+  <!-- User Study Section -->
+  <section class="section" id="user-study" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3 has-text-centered">User Study</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              We conducted a user study to evaluate the effectiveness, usability, and interaction capabilities of the proposed AR brain–robot interface across realistic activities of daily living scenarios.
+            </p>
+
+            <p>
+              A total of <b>18 participants</b> took part in the experiment. Each session included an EEG calibration phase for training a user-specific decoder, followed by a short familiarisation stage with the interaction pipeline and AR interface.
+            </p>
+
+            <p>
+              Participants were then asked to complete three multi-step manipulation tasks: a <b>Drinking Task</b>, a <b>Drawer Task</b>, and an <b>Oven Task</b>. These tasks were designed to evaluate sequential robot manipulation, object interaction, and high-level action selection in realistic household scenarios.
+            </p>
+
+            <p>
+              To assess the proposed framework, we collected metrics including task success rate, execution time, completion time, and EEG decoding performance. In addition, participants completed the <b>System Usability Scale (SUS)</b> and the <b>NASA Task Load Index (NASA-TLX)</b> questionnaires to evaluate perceived usability and workload.
+            </p>
+
+
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Tasks Section -->
   <section class="section" id="tasks" style="padding-top: 1rem;">
@@ -965,7 +1070,7 @@
       </a>
 
       <!-- IOB -->
-      <a href="https://www.internetofbrains.org/" target="_blank">
+      <a href="https://brains.link/en" target="_blank">
         <img src="static/images/iob.png"
             alt="Internet of Brains"
             style="height: 90px; vertical-align: middle;">
@@ -1072,56 +1177,56 @@ The policy was fine-tuned on in-house demonstrations spanning across <b>9 tasks<
   }
 };
 // =====================
-// SYSTEM DESIGN HOVER
+// USER INTERFACE TOGGLE
 // =====================
-const cards = document.querySelectorAll(".custom-card");
-const box = document.getElementById("hover-description");
-const container = document.getElementById("cards-container");
+const cards = document.querySelectorAll(
+  "#user-interface .interface-step-card"
+);
+
+const box = document.getElementById("step-description");
+
+function selectStep(step) {
+  cards.forEach(card => {
+    card.classList.toggle(
+      "is-active",
+      card.getAttribute("data-step") === step
+    );
+  });
+
+  box.innerHTML = `
+    <h3 style="
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 18px;
+    ">
+      ${descriptions[step].title}
+    </h3>
+
+    <div style="
+        font-size: 1.05rem;
+        line-height: 1.9;
+        text-align: justify;
+    ">
+      ${descriptions[step].text}
+    </div>
+  `;
+
+  box.style.opacity = "1";
+  box.style.maxHeight = "2000px";
+  box.style.padding = "35px";
+  box.style.marginTop = "30px";
+}
 
 cards.forEach(card => {
-  card.addEventListener("mouseenter", () => {
-
+  card.addEventListener("click", () => {
     const step = card.getAttribute("data-step");
-
-    box.innerHTML = `
-      <h3 style="
-          font-size: 1.6rem;
-          font-weight: 700;
-          margin-bottom: 18px;
-      ">
-        ${descriptions[step].title}
-      </h3>
-
-      <div style="
-          font-size: 1.05rem;
-          line-height: 1.9;
-          text-align: justify;
-      ">
-        ${descriptions[step].text}
-      </div>
-    `;
-
-    box.style.opacity = "1";
-
-    /* IMPORTANT */
-    box.style.maxHeight = "2000px";
-
-    box.style.padding = "35px";
-
-    box.style.marginTop = "30px";
+    selectStep(step);
   });
 });
 
-container.addEventListener("mouseleave", () => {
+// Look is open by default
+selectStep("look");
 
-  box.style.opacity = "0";
-
-  box.style.maxHeight = "0";
-
-  box.style.padding = "0px";
-
-  box.style.marginTop = "0px";
-});
 
 // =====================
 // MODAL (RESULTS - NASA / SUS)
@@ -1156,5 +1261,3 @@ MODAL HTML
   </div>
   <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
 </div>
-
-</html>

@@ -932,3 +932,89 @@ body {
   }
 }
 
+#team-image-strip .team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#team-image-strip .team-member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+#team-image-strip .member_name {
+  margin-top: 0.75rem;
+}
+
+
+/* ============================
+   USER INTERFACE TOGGLE
+   ============================ */
+
+#user-interface .interface-step-card {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: white;
+  cursor: pointer;
+}
+
+/* Selected card */
+#user-interface .interface-step-card.is-active {
+  border: 3px solid #3273dc;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(50, 115, 220, 0.18);
+}
+
+/* Do not expand descriptions inside these cards */
+#user-interface .interface-step-card .card-desc {
+  display: none;
+}
+
+/* Open description below the cards */
+#user-interface .step-description {
+  width: calc(100% - 1.5rem);
+  max-width: 1150px;
+
+  margin: 18px auto 0;
+  padding: 28px 34px;
+
+  background: #f7f8fa;
+  border-radius: 16px;
+  text-align: center;
+  color: #444;
+
+  opacity: 1;
+  overflow: visible;
+}
+
+#user-interface .step-description h3 {
+  margin-bottom: 12px;
+}
+
+#user-interface .step-description p {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #user-interface .step-description {
+    width: 100%;
+    padding: 22px 18px;
+  }
+}
+
+
+
