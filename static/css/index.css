@@ -1484,3 +1484,94 @@ body {
     margin: 0 auto;
   }
 }
+/* ============================
+   MOBILE CONTENT WIDTH FIX
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Use almost the full mobile viewport */
+  body {
+    overflow-x: hidden;
+  }
+
+  section.section {
+    width: 100%;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  section.section > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  section.section .columns {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  section.section .column,
+  section.section .column.is-four-fifths {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  section.section .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Takeaways specifically */
+  #takeaways .content,
+  #takeaways ul {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #takeaways ul {
+    padding-left: 1.25rem !important;
+    padding-right: 0 !important;
+  }
+
+  #takeaways li {
+    margin-bottom: 0.55rem;
+    line-height: 1.5;
+  }
+}
+/* Takeaways alignment — mobile only */
+@media (max-width: 768px) {
+
+  #takeaways .content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #takeaways ul {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 1rem !important;
+
+    box-sizing: border-box;
+  }
+
+  #takeaways li {
+    padding-left: 0.15rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.5;
+  }
+
+  #takeaways li::marker {
+    font-size: 0.75em;
+  }
+}
+
