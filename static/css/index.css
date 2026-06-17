@@ -1173,4 +1173,30 @@ body {
   width: 100%;
   height: 100%;
 }
+/* Fix Meet the Team photos on mobile */
+@media (max-width: 768px) {
+  #team-image-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px 16px;
+  }
+
+  #team-image-strip .team-member {
+    width: 120px;
+    flex: 0 0 120px;
+    text-align: center;
+  }
+
+  #team-image-strip .team-member img {
+    width: 110px !important;
+    height: 110px !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+}
 
