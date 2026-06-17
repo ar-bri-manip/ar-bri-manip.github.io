@@ -1575,3 +1575,69 @@ body {
   }
 }
 
+/* ============================
+   REDUCE SIDE MARGINS ON MOBILE
+   Whole website
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Reduce the outer margins of every section */
+  section.section {
+    width: 100%;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box;
+  }
+
+  /* Do not add more padding inside each section */
+  section.section > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Remove Bulma's additional horizontal margins */
+  section.section .columns {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Let the main columns use almost the full screen */
+  section.section .column {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    box-sizing: border-box;
+  }
+
+  section.section .column.is-four-fifths,
+  section.section .column.is-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* Text blocks should use the entire available width */
+  section.section .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Also reduce margins in the top hero section */
+  .hero-body {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .hero-body > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
