@@ -1199,4 +1199,108 @@ body {
     margin: 0 auto;
   }
 }
+/* ============================
+   SYSTEM DESIGN IMAGE
+   Keep text width unchanged
+   ============================ */
 
+#system-design .content {
+  width: 100%;
+}
+
+/* Only the diagram becomes wider */
+#system-design img {
+  display: block;
+  width: calc(100% + 180px) !important;
+  max-width: 1250px !important;
+  height: auto;
+
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* ============================
+   LARGER AND EQUAL TASK CARDS
+   ============================ */
+
+/* Allow the task grid to be wider than the text column */
+#tasks .task-video-grid {
+  width: min(96vw, 1650px) !important;
+  max-width: none !important;
+
+  margin-top: 50px;
+  margin-left: 50% !important;
+  margin-right: 0 !important;
+  transform: translateX(-50%);
+
+  align-items: stretch !important;
+}
+
+/* Make all three columns equal height */
+#tasks .task-video-grid > .column {
+  display: flex;
+  flex: 1 1 0;
+  padding-left: 0.65rem;
+  padding-right: 0.65rem;
+}
+
+/* Make all cards equal width and height */
+#tasks .task-video-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100% !important;
+  padding: 20px;
+}
+
+/* Make all videos visibly larger and identical */
+#tasks .task-video-player {
+  display: block;
+
+  width: 100% !important;
+  max-width: none !important;
+  height: auto;
+
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+
+  margin: 0 auto;
+}
+
+/* Keep descriptions aligned at the bottom */
+#tasks .task-video-description {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+
+/* ============================
+   MOBILE
+   ============================ */
+
+@media (max-width: 768px) {
+
+  #system-design img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0;
+    transform: none;
+  }
+
+  #tasks .task-video-grid {
+    width: 100% !important;
+    margin-left: 0 !important;
+    transform: none;
+  }
+
+  #tasks .task-video-grid > .column {
+    display: block;
+  }
+
+  #tasks .task-video-card {
+    height: auto !important;
+    margin-bottom: 24px;
+  }
+}
