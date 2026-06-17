@@ -1304,3 +1304,183 @@ body {
     margin-bottom: 24px;
   }
 }
+/* ============================
+   MOBILE SPACING REFINEMENT
+   ============================ */
+
+@media (max-width: 768px) {
+
+  section.section {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .column.is-four-fifths {
+    width: 100% !important;
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+  }
+
+  .content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* User Interface */
+  #user-interface .columns {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #user-interface .column {
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+  }
+
+  #user-interface .step-description {
+    width: 100% !important;
+    margin-top: 14px;
+    padding: 18px 14px;
+  }
+
+  /* Task videos */
+  #tasks .task-video-grid {
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  #tasks .task-video-grid > .column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #tasks .task-video-card {
+    padding: 14px !important;
+    margin-bottom: 18px;
+  }
+
+  /* Results */
+  #results .quantitative-results-table {
+    margin-top: 24px;
+  }
+
+  #results .questionnaire-results {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #results .questionnaire-results .column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #results .result-card-large {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Citation */
+  #citation .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #citation pre {
+    padding: 18px 14px !important;
+    font-size: 0.78rem !important;
+  }
+}
+/* ============================
+   USER INTERFACE — MOBILE GRID
+   ============================ */
+
+@media (max-width: 768px) {
+
+  /* Two selector cards per row */
+  #user-interface .interface-selector-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-left: -0.3rem !important;
+    margin-right: -0.3rem !important;
+  }
+
+  #user-interface .interface-selector-grid > .column {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    padding: 0.3rem !important;
+  }
+
+  /* Keep the four cards consistent */
+  #user-interface .interface-step-card {
+    width: 100%;
+    height: 100%;
+    padding: 16px 10px;
+  }
+
+  #user-interface .interface-step-card .card-icon {
+    height: 65px;
+    margin-bottom: 10px;
+  }
+
+  #user-interface .interface-step-card .card-title {
+    font-size: 1.05rem;
+  }
+
+  /* Make the selected text area wider */
+  #user-interface .step-description {
+    width: calc(100% + 16px) !important;
+    max-width: none !important;
+
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+    margin-top: 16px !important;
+
+    padding: 20px 16px !important;
+    text-align: left;
+  }
+
+  #user-interface .step-description p {
+    width: 100%;
+    max-width: none;
+    line-height: 1.65;
+  }
+}
+/* ============================
+   FOOTER LOGOS — MOBILE ONLY
+   ============================ */
+
+@media (max-width: 768px) {
+
+  footer.footer .columns {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  footer.footer .column {
+    flex: 0 1 auto !important;
+    width: auto !important;
+    padding: 0.25rem !important;
+  }
+
+  footer.footer img {
+    display: block;
+    width: auto !important;
+    max-width: 90px !important;
+    max-height: 45px !important;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+}
