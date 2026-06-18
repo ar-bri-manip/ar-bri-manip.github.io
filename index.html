@@ -1028,7 +1028,7 @@ const descriptions = {
   look: {
     title: "Look",
     text: `
-      <b>Look</b> captures the user’s gaze and visual interaction within the augmented reality workspace. The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
+      The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
 
       <br><br>
 
@@ -1036,11 +1036,11 @@ const descriptions = {
 
       <br><br>
 
-      When the user fixates on a detectable object for a predefined dwell time, the object name is displayed above the fixation point, and the available action options become visible as spatial overlays around the selected object. This feedback helps make object targeting transparent and reduces uncertainty during interaction.
+      When the user fixates on a detectable object for dwell time of 3 seconds, the object name is displayed above the fixation point, and the available action options become visible as spatial overlays around the selected object. This feedback makes object targeting transparent and reduces uncertainty during interaction.
 
       <br><br>
 
-      The gaze interface also supports <b>look-away cancellation</b>. If the user shifts their gaze away from the selected, the selection is cancelled and the user can choose again. If an action has already been selected, looking away sends the opposite command to the robot module as a lightweight error recovery mechanism.
+      The gaze interface also supports <b>look-away cancellation</b>: if the user shifts their gaze away from the selected object, the selection is cancelled and the user can start anew. If an action has already been selected, looking away sends the opposite command to the robot module, thus serving as a lightweight error recovery mechanism.
     `
   },
 
