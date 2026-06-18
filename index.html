@@ -973,11 +973,7 @@ const descriptions = {
   look: {
     title: "Look",
     text: `
-<<<<<<< HEAD
-      The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
-=======
       <b>Look</b> captures the user’s gaze and visual interaction within the AR workspace. The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
->>>>>>> 7d020b4 (Edit text)
 
       <br><br>
 
@@ -989,11 +985,7 @@ const descriptions = {
 
       <br><br>
 
-<<<<<<< HEAD
-      The gaze interface also supports <b>look-away cancellation</b>: if the user shifts their gaze away from the selected object, the selection is cancelled and the user can start anew. If an action has already been selected, looking away sends the opposite command to the robot module, thus serving as a lightweight error recovery mechanism.
-=======
       The gaze interface also supports <b>look-away cancellation</b>. If the user shifts their gaze away from the selected object, the selection is cancelled and the user can choose again. If an action has already been selected, looking away sends the opposite command to the robot module as a lightweight error recovery mechanism.
->>>>>>> 7d020b4 (Edit text)
     `
   },
 
@@ -1038,23 +1030,15 @@ const descriptions = {
 
       <br><br>
 
-<<<<<<< HEAD
-The robot module interfaces with a <b>Franka Emika Panda</b> arm through <b>RoboHive</b>. Based on the user choices, a prompt is built and passed to a fine-tuned <b>π 0.5 Vision-Language-Action (VLA)</b> policy, deployed as part of the robot control pipeline.
-=======
       The robot module interfaces with a <b>Franka Emika Panda</b> arm through <b>RoboHive</b>. Based on the user choices, a prompt is built and passed to a fine-tuned <b>π<sub>0.5</sub> vision-language-action (VLA) policy</b>, deployed as part of the robot control pipeline.
->>>>>>> 7d020b4 (Edit text)
 
       <br><br>
 
-<<<<<<< HEAD
-The policy was fine-tuned on in-house demonstrations spanning across 8 ADL-inspired subtasks. By using generalist robot policies as a basis, our system is capable of different forms of manipulation, such as opening and closing containers, and picking up objects of different natures.
-=======
       The policy was fine-tuned on in-house demonstrations spanning across <b>9 tasks</b>, including the ones used in the study. By using generalist robot policies as a basis, our system is capable of different forms of manipulation, such as opening and closing containers and picking up objects of different natures.
 
       <br><br>
 
       To maintain safety during robot operation, we use the <b>operational space control barrier function (OSCBF)</b> framework to constrain the arm’s motion and keep it within safe bounds.
->>>>>>> 7d020b4 (Edit text)
     `
   }
 };
