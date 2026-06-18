@@ -195,13 +195,8 @@
             <p style="text-align: center; font-weight: bold;">
 
             <p>
-              We present an augmented reality brain-robot interface (AR-BRI) for generalist robot arm manipulation, combining gaze-based object selection with EEG-based motor imagery control. Our system enables intuitive interaction within a shared autonomy framework, allowing users to perform multi-step tasks directly.
-            </p>
-
-            <p>
-              We validated our system through a feasibility study with 18 healthy participants performing activities of daily living (ADLs): drinking, using a drawing, and operating and oven.
-              We demonstrate reliable task execution, high user engagement, and good usability, highlighting the potential of the proposed approach user with motor disabilities.
-            </p>
+              We present an <b>augmented reality brain-robot interface (AR-BRI)</b> for generalist robot arm manipulation, combining gaze-based object selection with <b>electroencephalography (EEG)-based motor imagery (MI) action control</b>. Our system enables intuitive interaction within a shared autonomy framework, allowing users to perform multi-step tasks.
+            <p> We validated our system through a feasibility study with <b>18 healthy participants</b> performing activities of daily living (ADLs): drinking, using a drawer, and operating an oven. We demonstrate reliable task execution, high user engagement, and good usability, highlighting the potential of our proposed approach and motivating future evaluation with the intended user population. </p>
 
           </div>
         </div>
@@ -218,13 +213,7 @@
           <div class="content has-text-justified">
           <p style="text-align: center; font-weight: bold;">
 
-          <p>
-            Assistive robotics aims to support individuals with physical impairments in performing activities of daily living (ADLs), such as drinking, cooking, or manipulating everyday objects. However, existing systems are often limited to predefined tasks and rely on interfaces that are not intuitive, requiring users to divide their attention between control devices and the physical environment.
-          </p>
-
-          <p>
-            In this work, we explore a more natural interaction paradigm by combining augmented reality with brain-robot interfaces. By integrating gaze-based object selection and EEG-based motor imagery control directly within the user’s environment, our system enables intuitive, hands-free interaction with a robotic arm for flexible, multi-step tasks.
-          </p>
+          <p> Assistive robotics aims to support individuals with physical impairments in performing <b>activities of daily living (ADLs)</b>, such as drinking, cooking, or manipulating everyday objects. However, existing systems are often specialised to a single task or require users to divide their attention between control devices and the physical environment. </p> <p> In this work, we explore a more natural interaction paradigm by combining <b>augmented reality (AR)</b> with a <b>brain-robot interface (BRI)</b>. By integrating gaze-based object selection and EEG-based MI control directly within the user’s environment, our system enables intuitive, hands-free interaction with a robotic arm for accomplishing flexible, multi-step tasks. </p>
           </div>
           <figure class="image" style="text-align: center;">
             <img src="static/images/motivation.png"
@@ -251,10 +240,7 @@
         </h2>
 
         <!-- Introductory sentence -->
-        <div class="content has-text-justified">
-          <p>
-          </p>
-        </div>
+        <div class="content has-text-centered"> <p> Our user interface consists of four major components: <b>Look, Detect, Decide, and Execute</b>. </p> </div>
 
         <!-- Headset-view video -->
         <div class="content has-text-centered"
@@ -390,35 +376,7 @@
 
           <div class="content has-text-justified">
 
-            <p>
-              The proposed AR brain–robot interface is built around a
-              <b>modular system architecture</b> that connects the augmented
-              reality interface, EEG module, object detection module, central
-              server, and robot module. These components communicate through
-              dedicated channels to coordinate visual perception, neural intent
-              decoding, object selection, and robot execution within a shared
-              autonomy framework.
-            </p>
-
-            <p>
-              The AR headset provides the user-facing interface, combining
-              passthrough vision, eye tracking, and spatially aligned visual
-              feedback. Visual information from the headset is processed by the
-              object detection module, while EEG signals are streamed to the
-              recorder and decoder to estimate the user’s intended action. The
-              central server coordinates these inputs through the robot command
-              and object detection managers, then forwards the selected command
-              to the robot module.
-            </p>
-
-            <p>
-              Through this pipeline, the user selects an object with gaze and
-              chooses a high-level action through motor imagery, while the robot
-              executes the corresponding manipulation policy autonomously. The
-              overall system forms a continuous interaction loop: perceiving the
-              environment, identifying the target object, decoding the intended
-              action, and executing the selected robot behavior.
-            </p>
+          <p> The proposed <b>AR-BRI</b> is built around a modular system architecture that connects the AR module, EEG module, object detection module, and robot module to a central server. These components communicate through dedicated channels to coordinate visual perception, neural intent decoding, object selection, and robot execution. </p> <p> The AR headset provides the user-facing interface, combining passthrough vision, eye tracking, and spatially aligned visual feedback. Visual information from the headset is processed by the object detection module, while EEG signals are streamed to the recorder and decoder to estimate the user’s intended action. The central server coordinates these inputs through the robot command and object detection managers, then forwards the selected command to the robot module. </p> <p> Through this pipeline, the user selects an object via their gaze and chooses a high-level action through MI, while the robot executes the corresponding manipulation policy autonomously. The overall system forms a continuous interaction loop: <b>perceiving the environment, identifying the target object, decoding the intended action, and executing the selected robot behavior</b>. </p>
 
           </div>
 
@@ -428,163 +386,145 @@
     </div>
   </section>
 
-
-
-
-  <!-- User Study Section -->
-  <section class="section" id="user-study" style="padding-top: 2rem;">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-
-          <h2 class="title is-3 has-text-centered">User Study</h2>
-
-          <div class="content has-text-justified">
-            <p>
-              We conducted a user study to evaluate the effectiveness, usability, and interaction capabilities of the proposed AR brain–robot interface across realistic activities of daily living scenarios.
-            </p>
-
-            <p>
-              A total of <b>18 participants</b> took part in the experiment. Each session included an EEG calibration phase for training a user-specific decoder, followed by a short familiarisation stage with the interaction pipeline and AR interface.
-            </p>
-
-            <p>
-              Participants were then asked to complete three multi-step manipulation tasks: a <b>Drinking Task</b>, a <b>Drawer Task</b>, and an <b>Oven Task</b>. These tasks were designed to evaluate sequential robot manipulation, object interaction, and high-level action selection in realistic household scenarios.
-            </p>
-
-            <p>
-              To assess the proposed framework, we collected metrics including task success rate, execution time, completion time, and EEG decoding performance. In addition, participants completed the <b>System Usability Scale (SUS)</b> and the <b>NASA Task Load Index (NASA-TLX)</b> questionnaires to evaluate perceived usability and workload.
-            </p>
-
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Tasks Section -->
-<section class="section" id="tasks" style="padding-top: 1rem;">
+<!-- User Study Section -->
+<section class="section" id="user-study" style="padding-top: 2rem;">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-3 has-text-centered">Tasks</h2>
+        <h2 class="title is-3 has-text-centered">User Study</h2>
 
         <div class="content has-text-justified">
           <p>
-            Participants were asked to perform
-            <b>three multi-step manipulation tasks</b> inspired by
-            activities of daily living. These tasks were designed to
-            reflect common household interactions.
+            We conducted a user study to evaluate the effectiveness,
+            usability, and interaction capabilities of our proposed
+            <b>AR-BRI</b> across multi-step tasks representative of
+            activities of daily living (ADLs).
+          </p>
+
+          <p>
+            A total of <b>18 participants</b> took part in the experiment.
+            Each session included an EEG calibration phase for training a
+            user-specific decoder, followed by a short familiarisation stage
+            with the interaction pipeline and AR interface.
+          </p>
+
+          <p>
+            Participants were then asked to complete three multi-step
+            manipulation tasks: a <b>Drinking Task</b>, a
+            <b>Drawer Task</b>, and an <b>Oven Task</b>. These tasks were
+            designed to evaluate sequential robot manipulation, object
+            interaction, and high-level action selection in realistic
+            household scenarios.
           </p>
 
           <p>
             Each task required users to sequentially select objects and
-            trigger high-level actions through the AR interface, while
-            the robot autonomously executed the corresponding manipulation
-            policy.
+            trigger high-level actions through the AR interface, while the
+            robot autonomously executed the corresponding manipulation policy.
           </p>
-        </div>
-
-        <!-- Task Video Players -->
-        <div class="columns is-centered is-variable is-4 task-video-grid">
-
-          <!-- Drinking -->
-          <div class="column">
-            <div class="task-card task-video-card">
-
-              <p class="card-title task-video-title">
-                Drinking Task
-              </p>
-
-              <video
-                controls
-                preload="metadata"
-                playsinline
-                class="task-video-player"
-              >
-                <source
-                  src="static/videos/taskdrink.mp4"
-                  type="video/mp4"
-                >
-                Your browser does not support the video tag.
-              </video>
-
-              <p class="video-note">Video sped up for display</p>
-
-              <p class="task-video-description">
-                Drink and place the mug in the rack
-              </p>
-
-            </div>
-          </div>
-
-          <!-- Drawer -->
-          <div class="column">
-            <div class="task-card task-video-card">
-
-              <p class="card-title task-video-title">
-                Drawer Task
-              </p>
-
-              <video
-                controls
-                preload="metadata"
-                playsinline
-                class="task-video-player"
-              >
-                <source
-                  src="static/videos/taskdrawer.mp4"
-                  type="video/mp4"
-                >
-                Your browser does not support the video tag.
-              </video>
-
-              <p class="video-note">Video sped up for display</p>
-
-              <p class="task-video-description">
-                Open the drawer and place the spoon inside
-              </p>
-
-            </div>
-          </div>
-
-          <!-- Oven -->
-          <div class="column">
-            <div class="task-card task-video-card">
-
-              <p class="card-title task-video-title">
-                Oven Task
-              </p>
-
-              <video
-                controls
-                preload="metadata"
-                playsinline
-                class="task-video-player"
-              >
-                <source
-                  src="static/videos/taskoven.mp4"
-                  type="video/mp4"
-                >
-                Your browser does not support the video tag.
-              </video>
-
-              <p class="video-note">Video sped up for display</p>
-
-              <p class="task-video-description">
-                Open the oven and place the plate inside
-              </p>
-
-            </div>
-          </div>
-
         </div>
 
       </div>
     </div>
+
+    <!-- Task Video Players -->
+    <div class="columns is-centered is-variable is-4 task-video-grid">
+
+      <!-- Drinking -->
+      <div class="column">
+        <div class="task-card task-video-card">
+
+          <p class="card-title task-video-title">Drinking Task</p>
+
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            class="task-video-player"
+          >
+            <source src="static/videos/taskdrink.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p class="video-note">Video sped up for display</p>
+
+          <p class="task-video-description">
+            Drink and place the mug in the rack
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Drawer -->
+      <div class="column">
+        <div class="task-card task-video-card">
+
+          <p class="card-title task-video-title">Drawer Task</p>
+
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            class="task-video-player"
+          >
+            <source src="static/videos/taskdrawer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p class="video-note">Video sped up for display</p>
+
+          <p class="task-video-description">
+            Open the drawer and place the spoon inside
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Oven -->
+      <div class="column">
+        <div class="task-card task-video-card">
+
+          <p class="card-title task-video-title">Oven Task</p>
+
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            class="task-video-player"
+          >
+            <source src="static/videos/taskoven.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p class="video-note">Video sped up for display</p>
+
+          <p class="task-video-description">
+            Open the oven and place the plate inside
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+
+        <div class="content has-text-justified" style="margin-top: 35px;">
+          <p>
+            To assess our proposed framework, we collected metrics including
+            task success rate, execution time, completion time, and EEG
+            decoding performance. In addition, participants completed the
+            <b>System Usability Scale (SUS)</b> and the
+            <b>NASA Task Load Index (NASA-TLX)</b> questionnaires to evaluate
+            perceived usability and workload.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -601,7 +541,12 @@
 
         <div class="content has-text-justified">
           <p style="margin-bottom: 45px; line-height: 1.7;">
-          The results show that the proposed AR brain–robot interface supported effective sequential task execution across three activities of daily living. Participants completed the manipulation tasks with high success rates, consistent execution times, and good usability, while workload remained moderate and mainly related to the cognitive demands of EEG-based control.          </p>
+            Our results show that our proposed <b>AR-BRI</b> supported
+            effective sequential subtask execution across all three tasks.
+            Participants completed these tasks with high success rates,
+            consistent execution times, and good usability, while workload
+            remained moderate and mainly related to the cognitive demands of
+            EEG-based control.
           </p>
         </div>
 
@@ -612,24 +557,47 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
 
-        <h3 class="title is-4 has-text-centered">Robot and System Performance</h3>
+        <h3 class="title is-4 has-text-centered">
+          Robot and System Performance
+        </h3>
 
         <div class="content has-text-justified">
-          <p style="margin-bottom: 45px; line-height: 1.7;">
-        We evaluated robot and system performance through subtask success rate, execution time, overall task completion time, task success, and EEG decoder performance. Across all three tasks and eight subtasks, the system demonstrated consistent and reliable performance, supporting its viability for real-world assistive manipulation scenarios.
 
-            <br><br>
+          <p>
+            We evaluated robot and system performance through subtask success
+            rate, execution time, overall task completion time, task success,
+            and EEG decoder performance. Across all three tasks and
+            <b>eight subtasks</b>, the system demonstrated consistent and
+            reliable performance, supporting its viability for real-world
+            assistive manipulation scenarios.
+          </p>
 
-            Both the <b>Drawer</b> and <b>Oven</b> tasks were completed with a <b>100% success rate</b>. The <b>Drink</b> task failed twice due to robot failure during the <b>Place Mug</b> subtask. Most policies showed low variability in execution time, while the <b>Open</b> subtasks had higher variability, reflecting the difficulty of finding a secure grasp for opening.
+          <p>
+            Both the <b>Drawer</b> and <b>Oven</b> tasks were completed with
+            a <b>100% success rate</b>. The <b>Drink</b> task failed twice
+            due to robot failure during the <b>Place Mug</b> subtask. Most
+            policies showed low variability in execution time, while the
+            <b>Open</b> subtasks had higher variability, reflecting the
+            difficulty of finding a secure grasp for opening containers such
+            as the drawer and oven.
+          </p>
 
-            <br><br>
+          <p>
+            For EEG-based intent decoding, we achieved a mean
+            training/validation accuracy of <b>0.69 ± 0.16</b> and a test
+            accuracy of <b>0.70 ± 0.17</b> on the calibration data, evaluated
+            using stratified 5-fold cross-validation. Online decoding accuracy
+            improved to <b>0.86 ± 0.23</b>, attributable to the sliding window
+            scheme used during online decoding, in combination with the
+            gaze-based error recovery mechanism.
+          </p>
 
-            For EEG-based intent decoding, offline classification achieved a mean training/validation accuracy of <b>0.69 ± 0.16</b> and a test accuracy of <b>0.70 ± 0.17</b>, evaluated using stratified 5-fold cross-validation. Online decoding accuracy improved to <b>0.86 ± 0.23</b>, attributable to the sliding window scheme used during online decoding and the gaze-based error recovery mechanism.
-                </p>
-      </div>
+        </div>
 
       </div>
     </div>
+
+
 
 <!-- Quantitative Performance Metrics -->
 <div class="table-container quantitative-results-table">
@@ -731,43 +699,6 @@
 
 <div class="columns is-variable is-2 questionnaire-results">
 
-  <!-- NASA-TLX -->
-  <div class="column is-6">
-    <div class="result-card result-card-large static-questionnaire-card">
-
-      <div class="questionnaire-image-wrapper">
-        <img
-          src="static/images/NA.jpg"
-          class="result-image-large"
-          alt="NASA-TLX workload results"
-        >
-      </div>
-
-      <p class="result-title">NASA-TLX</p>
-      <p class="result-sub">Workload Analysis</p>
-
-      <p class="result-description">
-        The NASA-TLX results indicate a
-        <b>moderate cognitive workload</b> associated with the proposed
-        AR brain–robot interface. Among the workload components,
-        <b>mental demand</b> and <b>effort</b> were the dominant
-        contributors, reflecting the sustained cognitive engagement
-        required for EEG-based interaction. In contrast,
-        <b>physical</b> and <b>temporal demand</b> remained relatively
-        low, consistent with the passive and hands-free nature of the
-        gaze- and MI-driven interaction paradigm.
-
-        <br><br>
-
-        Participants also reported relatively low levels of frustration
-        and high perceived task performance, suggesting that the system
-        remained understandable and manageable despite the cognitive
-        demands introduced by motor imagery control.
-      </p>
-
-    </div>
-  </div>
-
   <!-- SUS -->
   <div class="column is-6">
     <div class="result-card result-card-large static-questionnaire-card">
@@ -805,6 +736,44 @@
     </div>
   </div>
 
+
+  <!-- NASA-TLX -->
+  <div class="column is-6">
+    <div class="result-card result-card-large static-questionnaire-card">
+
+      <div class="questionnaire-image-wrapper">
+        <img
+          src="static/images/NA.jpg"
+          class="result-image-large"
+          alt="NASA-TLX workload results"
+        >
+      </div>
+
+      <p class="result-title">NASA-TLX</p>
+      <p class="result-sub">Workload Analysis</p>
+
+      <p class="result-description">
+        The NASA-TLX results indicate a
+        <b>moderate cognitive workload</b> associated with the proposed
+        AR-BRI. Among the workload components,
+        <b>mental demand</b> and <b>effort</b> were the dominant
+        contributors, reflecting the sustained cognitive engagement
+        required for EEG-based interaction. In contrast,
+        <b>physical</b> and <b>temporal demand</b> remained relatively
+        low, consistent with the passive and hands-free nature of the
+        gaze- and MI-driven interaction paradigm.
+
+        <br><br>
+
+        Participants also reported relatively low levels of frustration
+        and high perceived task performance, suggesting that the system
+        remained understandable and manageable despite the cognitive
+        demands introduced by MI control.
+      </p>
+
+    </div>
+  </div>
+
 </div>
 
 
@@ -824,32 +793,7 @@
             </p>
 
             <div class="content has-text-left" style="display: inline-block; text-align: left;">
-
-            <ul>
-              <li>
-                <b>Effective sequential control:</b> Users were able to complete multi-step activities of daily living through the proposed AR brain–robot interface.
-              </li>
-
-              <li>
-                <b>High task performance:</b> The system achieved near-perfect subtask success rates and consistent execution times across the evaluated tasks.
-              </li>
-
-              <li>
-                <b>Good usability:</b> Participants rated the system positively, with a SUS score of <b>76.94</b>, corresponding to a “Good” usability range.
-              </li>
-
-              <li>
-                <b>Moderate cognitive workload:</b> EEG-based control required sustained cognitive engagement, while physical and temporal demands remained low.
-              </li>
-
-              <li>
-                <b>Engaging interaction:</b> Participants responded positively to the combination of real-world object interaction, AR feedback, and robot execution.
-              </li>
-
-              <li>
-                <b>Future validation needed:</b> The system was tested with healthy participants, so further evaluation with the intended user population is needed.
-              </li>
-            </ul>
+            <ul> <li> <b>Effective sequential control:</b> Users were able to complete multi-step ADL-inspired tasks through our proposed AR-BRI. </li> <li> <b>High task performance:</b> The system achieved near-perfect subtask success rates and consistent execution times across the evaluated tasks. </li> <li> <b>Good usability:</b> Participants rated the system positively, with a SUS score of <b>76.94</b>, corresponding to a “Good” usability range. </li> <li> <b>Moderate cognitive workload:</b> EEG-based control required sustained cognitive engagement, while physical and temporal demands remained low. </li> <li> <b>Engaging interaction:</b> Participants responded positively to the combination of real-world object interaction, AR feedback, and robot execution. </li> <li> <b>Future validation needed:</b> The system was tested with healthy participants, so further evaluation with the intended user population is needed. </li> </ul>
 
             </div>
 
@@ -1029,7 +973,11 @@ const descriptions = {
   look: {
     title: "Look",
     text: `
+<<<<<<< HEAD
       The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
+=======
+      <b>Look</b> captures the user’s gaze and visual interaction within the AR workspace. The AR interface runs on a <b>Meta Quest Pro</b> headset and was developed in <b>Unreal Engine 5.4</b> to leverage passthrough vision and integrated eye tracking for hands-free interaction.
+>>>>>>> 7d020b4 (Edit text)
 
       <br><br>
 
@@ -1041,36 +989,41 @@ const descriptions = {
 
       <br><br>
 
+<<<<<<< HEAD
       The gaze interface also supports <b>look-away cancellation</b>: if the user shifts their gaze away from the selected object, the selection is cancelled and the user can start anew. If an action has already been selected, looking away sends the opposite command to the robot module, thus serving as a lightweight error recovery mechanism.
+=======
+      The gaze interface also supports <b>look-away cancellation</b>. If the user shifts their gaze away from the selected object, the selection is cancelled and the user can choose again. If an action has already been selected, looking away sends the opposite command to the robot module as a lightweight error recovery mechanism.
+>>>>>>> 7d020b4 (Edit text)
     `
   },
 
   detect: {
     title: "Detect",
     text: `
-    <b>Detect</b> identifies the object that the user is looking at within the physical workspace. The Meta Quest Pro streams its passthrough view to the object detection manager, which forwards it to an object detection module based on <b>OWLv2</b>, a zero-shot open-vocabulary object detection model.
+      <b>Detect</b> identifies the object that the user is looking at within the physical workspace. The Meta Quest Pro streams its passthrough view to the object detection manager, which forwards it to an object detection module based on <b>OWLv2</b>, a zero-shot open-vocabulary object detection model.
 
-    <br><br>
+      <br><br>
 
-    Every three seconds, the object detection module receives the passthrough view together with a set of candidate labels corresponding to the objects present in the user’s environment. The system then analyzes the detected objects and bounding boxes, filtering them to identify the object that intersects with the user’s gaze direction.
+      Every three seconds, the object detection module receives the passthrough view together with a set of candidate labels corresponding to the objects present in the user’s environment. The system then analyzes the detected objects and bounding boxes, filtering them to identify the object that intersects with the user’s gaze direction.
 
-    <br><br>
+      <br><br>
 
-    When a gaze-aligned object is detected, its name is displayed as a textual cue over the gaze reticule. This allows the AR interface to connect the user’s visual attention with the object detection pipeline, supporting spatially aware object selection without requiring predefined markers or manual input.  
+      When a gaze-aligned object is detected, its name is displayed as a textual cue over the gaze reticule. This allows the AR interface to connect the user’s visual attention with the object detection pipeline, supporting spatially-aware object selection without requiring predefined markers or manual input.
     `
   },
+
   decide: {
     title: "Decide",
     text: `
-      <b>Decide</b> represents the EEG-based action selection layer of the system, where the user’s motor imagery activity is decoded into high-level manipulation intents. EEG data is acquired from a <b>g.tec g.GAMMAcap</b>, using <b>22 EEG channels</b>, and streamed in real time through the <b>Lab Streaming Layer (LSL)</b> framework.
+      <b>Decide</b> represents the EEG-based action selection layer of the system, where the user’s MI activity is decoded into high-level manipulation intents. EEG data is acquired from a <b>g.tec g.GAMMAcap</b>, using <b>22 EEG channels</b>, and streamed in real time through the <b>Lab Streaming Layer (LSL)</b> framework.
 
       <br><br>
 
-      After an object is selected through gaze interaction, the user chooses between two available actions, <b>"Use"</b> and <b>"Place"</b>, through motor imagery. These two actions are mapped to distinct MI classes, corresponding to imagined left- and right-hand movements. The EEG decoder processes sensorimotor rhythm activity to classify the intended action and send the corresponding command to the robot control pipeline.
+      After an object is selected through gaze interaction, the user chooses between two available actions, <b>“Use”</b> and <b>“Place”</b>, through MI. These two actions are mapped to distinct MI classes, corresponding to imagined left- and right-hand movements. The EEG decoder processes sensorimotor rhythm activity to classify the intended action and send the corresponding command to the robot control pipeline.
 
       <br><br>
 
-      For deployment, user-specific EEG data is collected during a calibration phase and used to train a <b>scikit-learn</b>-based classifier. During online interaction, the decoding pipeline uses a <b>sliding window scheme</b> to reduce the impact of isolated incorrect predictions, supporting more stable real-time action selection.
+      For deployment, user-specific EEG data is collected during a calibration phase and used to train a <b>scikit-learn-based classifier</b>. During online interaction, the decoding pipeline uses a <b>sliding window scheme</b> to reduce the impact of isolated incorrect predictions, supporting more stable real-time action selection.
 
       <br><br>
 
@@ -1081,18 +1034,31 @@ const descriptions = {
   execute: {
     title: "Execute",
     text: `
-<b>Execute</b> represents the robot manipulation layer of the system, where high-level user intent is transformed into autonomous robot execution. In the shared autonomy framework, the user specifies the intended object and action, while the robot handles the low-level motion required to complete the manipulation task.
+      <b>Execute</b> represents the robot manipulation layer of the system, where high-level user intent is transformed into autonomous robot execution. In the shared autonomy framework, the user specifies the intended object and action, while the robot handles the low-level motion required to complete the manipulation task.
 
-<br><br>
+      <br><br>
 
+<<<<<<< HEAD
 The robot module interfaces with a <b>Franka Emika Panda</b> arm through <b>RoboHive</b>. Based on the user choices, a prompt is built and passed to a fine-tuned <b>π 0.5 Vision-Language-Action (VLA)</b> policy, deployed as part of the robot control pipeline.
+=======
+      The robot module interfaces with a <b>Franka Emika Panda</b> arm through <b>RoboHive</b>. Based on the user choices, a prompt is built and passed to a fine-tuned <b>π<sub>0.5</sub> vision-language-action (VLA) policy</b>, deployed as part of the robot control pipeline.
+>>>>>>> 7d020b4 (Edit text)
 
-<br><br>
+      <br><br>
 
+<<<<<<< HEAD
 The policy was fine-tuned on in-house demonstrations spanning across 8 ADL-inspired subtasks. By using generalist robot policies as a basis, our system is capable of different forms of manipulation, such as opening and closing containers, and picking up objects of different natures.
+=======
+      The policy was fine-tuned on in-house demonstrations spanning across <b>9 tasks</b>, including the ones used in the study. By using generalist robot policies as a basis, our system is capable of different forms of manipulation, such as opening and closing containers and picking up objects of different natures.
+
+      <br><br>
+
+      To maintain safety during robot operation, we use the <b>operational space control barrier function (OSCBF)</b> framework to constrain the arm’s motion and keep it within safe bounds.
+>>>>>>> 7d020b4 (Edit text)
     `
   }
 };
+
 // =====================
 // USER INTERFACE TOGGLE
 // =====================
